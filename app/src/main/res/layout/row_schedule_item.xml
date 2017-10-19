@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <com.pixplicity.fontview.FontTextView
+            android:id="@+id/exp_lv_group"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="alarm"
+            android:textColor="@color/colorListText"
+            app:ms_typeface="fonts/OpenSans-Regular.ttf"
+            app:pix_font="fonts/OpenSans-Regular.ttf" />
+
+        <ImageView
+            android:id="@+id/iv_remove"
+            android:layout_width="32dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="244dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:src="@drawable/remove_icon" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/spinner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spinner_torahmate_names"
+            style="@style/customStyle"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:ms_arrowSize="16dp"
+            app:ms_baseColor="@color/white"
+            app:ms_floatingLabelColor="#002C4F"
+            app:ms_hint="@string/select_torahmate"
+            app:ms_multiline="false"
+            app:ms_typeface="fonts/OpenSans-Regular.ttf"
+            app:pix_font="fonts/OpenSans-Regular.ttf" />
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spinner_days"
+            style="@style/customStyle"
+            android:layout_below="@+id/spinner_torahmate_names"
+            android:layout_marginTop="5dp"
+            app:ms_arrowSize="16dp"
+            app:ms_baseColor="@color/white"
+            app:ms_floatingLabelColor="#002C4F"
+            app:ms_hint="@string/days_text"
+            app:ms_multiline="false"
+            app:ms_typeface="fonts/OpenSans-Regular.ttf"
+            app:pix_font="fonts/OpenSans-Regular.ttf" />
+
+        <com.pixplicity.fontview.FontEditText
+            android:id="@+id/start_Time"
+            style="@style/customStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_toLeftOf="@+id/iv_calender"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="left"
+            android:hint="@string/start_time"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textSize="16dp"
+            app:pix_font="fonts/OpenSans-Regular.ttf" />
+
+        <com.pixplicity.fontview.FontEditText
+            android:id="@+id/end_Time"
+            style="@style/customStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_toLeftOf="@+id/iv_calender"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="left"
+            android:hint="@string/end_time"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textSize="16dp"
+            app:pix_font="fonts/OpenSans-Regular.ttf" />
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spinner_remind_me"
+            style="@style/customStyle"
+            android:layout_below="@+id/spinner_torahmate_names"
+            android:layout_marginTop="5dp"
+            app:ms_arrowSize="16dp"
+            app:ms_baseColor="@color/white"
+            app:ms_floatingLabelColor="#002C4F"
+            app:ms_hint="@string/remind_me"
+            app:ms_multiline="false"
+            app:ms_typeface="fonts/OpenSans-Regular.ttf"
+            app:pix_font="fonts/OpenSans-Regular.ttf" />
+
+    </LinearLayout>
+</LinearLayout>

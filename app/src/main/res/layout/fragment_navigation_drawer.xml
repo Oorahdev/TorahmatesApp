@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:background="@color/dark_blue">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="80"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo_nav"
+                    android:id="@+id/ic_logo"
+                    android:layout_width="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:text="Pesia Soloveichik"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/tv_nav_name"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentBottom="false"
+                android:gravity="bottom|left"
+                android:layout_weight="30"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/drawer_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_weight="80">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/white"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:paddingTop="10dp"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:paddingRight="20dp">-->
+
+        <!--<TextView-->
+            <!--android:text="TextView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv_info"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@drawable/ic_info"-->
+            <!--android:id="@+id/iv_info"-->
+            <!--android:layout_weight="0" />-->
+
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f6bb30"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="15dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Available Miles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_available_miles_title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="0" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_info"
+                    android:id="@+id/iv_info"
+                    android:layout_weight="0"
+                    android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_available_miles_val"
+                android:textColor="@android:color/black"
+                android:gravity="left"/>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:paddingBottom="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Minutes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_minutes_title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Verified"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_verified_title"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_verified_val"
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Unverified"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_unverified_title"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_unverified_val"
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_minutes_total_title"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:id="@+id/tv_minutes_total_val"
+                    android:textColor="@android:color/black"
+                    android:gravity="right" />
+
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Mileage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_mileage_title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Available"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_available_title"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_available_val"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="right|center_vertical" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Redeemed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_redeemed_title"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_redeemed_val"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="right|center_vertical" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="Total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_milage_total_title"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_milage_total_val"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="right|center_vertical" />
+
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ECEFF1"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:text="Account Activity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:text="MINUTES"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:gravity="right"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_mileage_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_title"
+            android:background="@color/white"
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@color/colorListText"
+            android:scrollbarSize="5dp"
+            android:fadeScrollbars="false"
+            android:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/pbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:progressDrawable="@drawable/progress_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <ProgressBar
+            android:id="@+id/pbar_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:progressDrawable="@drawable/progress_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

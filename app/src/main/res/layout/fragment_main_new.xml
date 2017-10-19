@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/lib/com.app.chasebank"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:keepScreenOn="true"
+              android:layoutDirection="ltr">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="35"
+            android:layout_alignParentBottom="true">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f6bb30"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tv_welcome"
+                        android:text="@string/welcome"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="25dp"
+                        android:layout_weight="40" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="60"
+                        android:paddingTop="20dp"
+                        android:id="@+id/ll_balance">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight="88">
+
+                            <TextView
+                                android:id="@+id/tv_miles_title"
+                                android:text="@string/miles_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="50"
+                                android:textColor="@android:color/black"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/tv_miles"
+                                android:text="0"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dip"
+                                android:layout_weight="50"
+                                android:textColor="@android:color/black"
+                                android:textSize="20dp" />
+
+                        </LinearLayout>
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="0dip"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:src="@drawable/ic_arrow_forward"-->
+                            <!--android:id="@+id/imageView"-->
+                            <!--android:layout_weight="12"-->
+                            <!--android:paddingTop="5dp"-->
+                            <!--android:paddingBottom="5dp" />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:background="#fafafa"
+                android:padding="2pt"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:background="#4ea8ff"
+                    android:layout_marginRight="1pt"
+                    android:padding="20dp"
+                    android:id="@+id/fl_start_lerning">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4ea8ff"
+                        android:id="@+id/ll_call_tm">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:src="@drawable/ic_perm_phone"
+                            android:id="@+id/iv_call_torahmate"
+                            android:layout_weight="60"
+                            android:paddingTop="15dp" />
+
+                        <TextView
+                            android:id="@+id/tv_start_learning"
+                            android:text="@string/call_my_torahmate_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dip"
+                            android:layout_weight="30"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:padding="20dp"
+                    android:background="#9acdff"
+                    android:layout_marginLeft="1pt"
+                    android:id="@+id/fl_enter_minutes">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#9acdff"
+                        android:id="@+id/ll_report_miles">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:src="@drawable/ic_query_builder"
+                            android:id="@+id/iv_enter_miles"
+                            android:layout_weight="60"
+                            android:paddingTop="15dp" />
+
+                        <TextView
+                            android:id="@+id/tv_enter_minutes"
+                            android:text="@string/btn_miles_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dip"
+                            android:layout_weight="30"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pbar"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pbar"
+                    android:layout_weight="10"
+                    android:layout_margin="5dp" />
+
+                <TextView
+                    android:text="Please Wait . . ."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_weight="90"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

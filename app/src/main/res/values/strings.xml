@@ -1,0 +1,163 @@
+<resources>
+    <string name="app_name">TorahMates</string>
+    <string name="select_torahmate">Select a Torahmate</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="setting_text">Setting</string>
+    <string name="login_text">Login</string>
+    <string name="logout_text">Logout</string>
+    <string name="connection_msg">Please check your internet connection!</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="logout">Do you want to Logout ?</string>
+    <string name="skip">skip</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="tv_welcome_txt">Welcome</string>
+    <string name="tv_login_txt">Login</string>
+    <string name="btn_sign_in_txt">Sign In</string>
+    <string name="btn_sign_up_txt">Create New Account</string>
+    <string name="remember_password_txt">Remember me next time</string>
+    <string name="forget_password_text"><u><i>forget password?</i></u></string>
+    <string name="email_txt">Email</string>
+    <string name="email_validity_text">Enter a valid email</string>
+    <string name="empty_email_text">Enter email address</string>
+    <string name="password_txt">Password</string>
+    <string name="confirm_password_txt">Confirm Password</string>
+    <string name="password_length">Password must contain at least six characters!</string>
+    <string name="mileage_txt">Mileage: 220</string>
+    <string name="mileage_sub_txt">Miles earned</string>
+    <string name="contact_torahmates_header">Contact Torahmates</string>
+    <!--<string name="btn_miles_txt">Report Learning</string>-->
+    <string name="btn_miles_txt">Enter Minutes</string>
+    <string name="result_txt">Showing Result for</string>
+    <!--<string name="call_my_torahmate_txt">Call My Torahmate</string>-->
+    <string name="call_my_torahmate_txt">Start Learning</string>
+    <string name="call_log">Call Log</string>
+    <string name="mileage_log">Mileage Log</string>
+    <string name="learning_schedule">Learning Schedule</string>
+    <string name="call_to">Call to:</string>
+    <string name="minutes">Minutes:</string>
+    <string name="time_place">Time Place:</string>
+    <string name="mileage_log_header">Recent Miles</string>
+    <string name="days_text">Days</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="save_text">Save</string>
+    <string name="my_alarms_header">List of Scheduled Alarms</string>
+    <string name="my_alarms">My Alarms</string>
+    <string name="report_learning_header">Report Learning</string>
+    <string name="report_learning_minutes">Enter amount of minutes learned today</string>
+    <string name="msg_enter_min_succeeded">Minutes were entered successfully</string>
+    <string name="btn_go">Enter Minutes</string>
+    <string name="btn_report_different_day">Want to report of a different day?</string>
+    <string name="date_time_text">Select Date and Time</string>
+    <string name="missing_email">Email Required!</string>
+    <string name="missing_password">Password Required!</string>
+    <string name="under_construction">Layout under construction!</string>
+    <string name="missing_email_client">There is no email client installed!</string>
+    <string name="send_mail">Send mail...</string>
+    <string name="call_failed">Call Failed,please try again later.</string>
+    <string name="datepicker_dialog">Datepickerdialog</string>
+    <string name="timepicker_dialog">Timepickerdialog</string>
+    <string name="tel_type_email">EMAIL</string>
+    <string name="minutes_str">minutes</string>
+    <string name="miles">miles</string>
+    <string name="login_check">Please Login To Proceed Further</string>
+    <string name="last_update_tv">Last update was :</string>
+    <string name="nav_item_zero"> </string>
+    <string name="nav_item_set_schedule">Schedule</string>
+    <string name="nav_item_info">Info</string>
+    <string name="nav_item_call_log">Call Log</string>
+    <string name="nav_item_mileage_log">Mileage Log</string>
+    <string name="nav_item_my_alarms">My Alarms</string>
+    <string name="nav_item_app_feedback">App Feedback</string>
+    <string name="nav_item_contact_us">Contact Us</string>
+    <string name="nav_item_logout_text">Logout</string>
+    <string-array name="nav_drawer_labels">
+        <!--<item>@string/nav_item_zero</item>-->
+        <!--<item>@string/nav_item_set_schedule</item>-->
+        <!--<item>@string/nav_item_my_alarms</item>-->
+        <!--<item>@string/nav_item_info</item>-->
+        <!--<item>@string/nav_item_call_log</item>-->
+        <!--<item>@string/nav_item_mileage_log</item>-->
+        <item>@string/nav_item_contact_us</item>
+        <item>@string/nav_item_app_feedback</item>
+        <item>@string/nav_item_logout_text</item>
+    </string-array>
+    <string name="tv_back_str">Back</string>
+    <string name="select_torahmates">Select a Torahmate</string>
+    <string name="confirm_exit">Confirm Exit</string>
+    <string name="confirm_exit_msg">Are you sure you want to quit?</string>
+    <string name="minutes_reported_text">Minutes have been submitted for approval</string>
+    <string name="log_in_text">Signing In...</string>
+    <string name="alarm_caption">Alarm</string>
+    <string name="info_caption">Info</string>
+    <string name="user_name_txt">Username</string>
+    <string name="missing_fields">Enter values in missing fields!</string>
+     <string name="info_text"><b>Minutes:</b>\n\nMaximum minutes per session is 60\nMaximum minutes per week is 120\nWeek starts Saturday night.\n\nTo earn miles, your minutes need to match up with your partner\'s report of minutes.
+     </string>
+    <string name="report_learning_fragment">reportLearningFragment</string>
+    <string name="no_PhoneNumber">There is no phone number in our system. Please call your TM coordinator to update account info.</string>
+    <string name="report_learning_minutes_fragment">reportLearningMinutesFragment</string>
+    <string name="set_schedule_fragment">setScheduleFragment</string>
+    <string name="info_fragment">infoFragment</string>
+    <string name="main_fragment">mainFragment</string>
+    <string name="nav_drawer_header">App Menu</string>
+    <string name="login_required">Login to proceed further</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_alarm_alert">Please add alarm first</string>
+    <string name="add_alarm_title_alert">Please add alarm title</string>
+    <string name="add_alarm_hint">add alarm title here...</string>
+    <string name="missing_sim_card">Sim card not found!</string>
+    <string name="add_number_alert">Please enter your phone number to call Torahmates</string>
+    <string name="add_number_hint">add phone number here...</string>
+    <string name="add_cell_number_alert">Please enter valid phone number to make calls</string>
+    <string name="dismiss_alarm_title_alert">Alarm</string>
+    <string name="btn_dismiss_alarm_alert">Dismiss Alarm</string>
+    <string name="report_minutes">Enter Minutes</string>
+    <string name="report_learning_date">Enter Date</string>
+    <string name="report_calling_mins">Minutes have been submitted</string>
+    <string name="timeOut">Connection Time out</string>
+    <string name="main_activity">MainActivity</string>
+    <string name="my_alarm_fargment">MyAlarmsFragment</string>
+    <string name="delete_update_alarm">Delete or Update the Alarm?</string>
+    <string name="remind_me">Remind Me</string>
+    <string name="alarmed_before">Alarmed Before</string>
+    <string name="no_contact_info">We\'re sorry, your Torahmate does not have a number in our system</string>
+    <string name="info_title">Rules and Information</string>
+    <string name="enter_minutes_title">Enter Minutes</string>
+    <string name="submitting">Submitting . . .</string>
+
+    <string name="min5">5 min</string>
+    <string name="min10">10 min</string>
+    <string name="min15">15 min</string>
+    <string name="min30">30 min</string>
+    <string name="hr1">1 hr</string>
+    <string-array name="alarm_before">
+        <item>@string/min5</item>
+        <item>@string/min10</item>
+        <item>@string/min15</item>
+        <item>@string/min30</item>
+        <item>@string/hr1</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update_schedule">Update Schedule</string>
+    <string name="title">Title</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="tm_coordinator">TM Coordinator</string>
+    <string name="extension">"Ext. "</string>
+    <string name="info_email">info@oorah.org</string>
+    <string name="feedback">App Feedback</string>
+    <string name="torah_email">tmapp@oorah.org</string>
+    <string name="add_new_alarm">AddNewAlarm</string>
+    <string name="torahmate_number">18778672412</string>
+    <string name="torahas_number">1877-TORAH12</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="miles_title">Miles Balance</string>
+
+</resources>

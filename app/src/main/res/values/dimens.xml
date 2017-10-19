@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_drawer_width">210dp</dimen>
+    <dimen name="app_bar_top_padding">0dp</dimen>
+    <dimen name="drawer_margin_top">24dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+</resources>

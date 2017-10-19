@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:datePickerMode="calendar"
+            app:theme="@style/datepicker"
+            android:layout_gravity="center"
+            android:calendarViewShown="false"
+            android:layout_marginTop="20dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_date_next"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentEnd="false"
+                android:layout_gravity="bottom|right"
+                android:textColor="@color/dark_blue"
+                android:background="@color/white"
+                android:textSize="20dp"
+                android:layout_margin="20dp"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/mode_24_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mode_24_hours"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/pbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_gravity="center_horizontal"
+        android:progressDrawable="@drawable/progress_bar"
+        android:visibility="gone"/>
+</RelativeLayout>

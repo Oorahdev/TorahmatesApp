@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#9ACDFF"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_icon_left"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="20"
+            android:layout_alignBottom="@+id/exp_lv_group"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/logo"/>
+
+        <com.pixplicity.fontview.FontTextView
+            android:id="@+id/exp_lv_group"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="80"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/view_liner"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            app:pix_font="fonts/OpenSans-Regular.ttf"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_icon_select_tm"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:layout_weight="10"-->
+            <!--android:layout_alignBottom="@+id/exp_lv_group"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:src="@drawable/ic_arrow_forward" />-->
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_liner"
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorListDivider"
+        android:visibility="gone"/>
+</RelativeLayout>

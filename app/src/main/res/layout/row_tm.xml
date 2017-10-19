@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_marginBottom="2dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/list_icon"-->
+            <!--android:layout_width="85dp"-->
+            <!--android:layout_height="85dp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/logo"-->
+            <!--android:layout_weight="1" />-->
+
+        <ImageView
+            android:id="@+id/list_icon"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo"
+            android:layout_weight="1"
+            android:padding="20dp" />
+
+        <com.pixplicity.fontview.FontTextView
+            android:id="@+id/list_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/list_icon"
+            android:layout_centerInParent="false"
+            android:layout_gravity="left|center_vertical"
+            android:gravity="left|center"
+            android:text="Text"
+            android:textColor="@android:color/black"
+            app:pix_font="fonts/OpenSans-Regular.ttf"
+            android:layout_weight="70"
+            android:textSize="20dp" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_arrow_tm_next"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:src="@drawable/ic_arrow_forward"-->
+            <!--android:layout_margin="20dp" />-->
+    </LinearLayout>
+
+</RelativeLayout>
