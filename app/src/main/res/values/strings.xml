@@ -160,4 +160,12 @@
     <string name="welcome">Welcome!</string>
     <string name="miles_title">Miles Balance</string>
 
+
+
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="log_token">Log Token</string>
+    <string name="subscribe_to_news">Subscribe To News</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="msg_subscribed">Subscribed to news topic</string>
+
 </resources>

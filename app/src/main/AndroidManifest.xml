@@ -81,5 +81,26 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="0fa398dc43b7cb57b5a65895e3311ae77c86d93a" />
+
+        <!-- FirebaseInstanceIdService performs security checks at runtime,
+      no need for explicit permissions despite exported="true"             -->
+        <service android:name="com.vb.torahmate.main.MyFirebaseInstanceIDService" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.vb.torahmate.main.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
     </application>
+
+
+
+
+
 </manifest>

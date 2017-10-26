@@ -8,11 +8,10 @@ buildscript {
     }
 }
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.fabric'
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "com.vb.torahmate"
@@ -46,8 +45,12 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true;
     }
+
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.firebase:firebase-jobdispatcher:0.6.0'
     compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.0.+'
+    compile 'com.android.support:recyclerview-v7:22.0.0'
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.path:android-priority-jobqueue:1.1.2'
     compile 'de.greenrobot:eventbus:2.4.0'
@@ -65,5 +68,7 @@ dependencies {
     compile 'com.facebook.rebound:rebound:0.3.8'
     compile 'com.github.AutSoft:CircularTools:1.1.0'
     compile 'com.appsee:appsee-android:+'
-    compile 'com.google.android.gms:play-services-analytics:8.3.0'
+    compile 'com.google.android.gms:play-services-analytics:10.0.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

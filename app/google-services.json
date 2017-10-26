@@ -1,45 +1,55 @@
 {
   "project_info": {
-    "project_id": "tm-app-6171b",
-    "project_number": "702076656462",
-    "name": "tm-app"
+    "project_number": "85469146610",
+    "firebase_url": "https://torahmatesapp.firebaseio.com",
+    "project_id": "torahmatesapp",
+    "storage_bucket": "torahmatesapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:702076656462:android:78a80c3ba51f6db3",
-        "client_id": "android:com.vb.torahmate",
-        "client_type": 1,
+        "mobilesdk_app_id": "1:85469146610:android:78a80c3ba51f6db3",
         "android_client_info": {
           "package_name": "com.vb.torahmate"
         }
       },
-      "oauth_client": [],
-      "api_key": [],
-      "services": {
-        "analytics_service": {
-          "status": 2,
-          "analytics_property": {
-            "tracking_id": "UA-9890201-4"
+      "oauth_client": [
+        {
+          "client_id": "85469146610-h29htue3i428segtlldc270clsred615.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vb.torahmate",
+            "certificate_hash": "50f5872982ff0e0d3b2846ce5422b1492f0cc3aa"
           }
         },
-        "cloud_messaging_service": {
-          "status": 2,
-          "apns_config": []
+        {
+          "client_id": "85469146610-32kfsrajr1tgpcfalp7h42g0uosls51e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk90nbxIiy64gdAw2a0JTTgRI6-4KUb60"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "google_signin_service": {
-          "status": 1
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85469146610-32kfsrajr1tgpcfalp7h42g0uosls51e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
   ],
-  "client_info": [],
-  "ARTIFACT_VERSION": "1"
+  "configuration_version": "1"
 }

@@ -102,7 +102,8 @@ public class AppManager extends Application {
     synchronized public static Tracker getDefaultTracker() {
         if (mTracker == null) {
             GoogleAnalytics analytics = GoogleAnalytics.getInstance(getInstance());
-            mTracker = analytics.newTracker(R.xml.global_tracker);
+            //mTracker = analytics.newTracker(R.xml.global_tracker);
+            mTracker = analytics.newTracker("UA-xxxxxxx-1");
         }
         return mTracker;
     }

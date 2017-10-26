@@ -16,13 +16,17 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.activeandroid.query.Delete;
 import com.appsee.Appsee;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.path.android.jobqueue.JobManager;
 import com.vb.torahmate.R;
 import com.vb.torahmate.accounts.Login;
@@ -59,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements
     public static TextView messageBar;
     IntentFilter s_intentFilter = new IntentFilter();
 
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +100,37 @@ public class MainActivity extends AppCompatActivity implements
         setLogoListener();
         AppManager.getEventBus().unregister(this);
         AppManager.getEventBus().register(this);
+
+
+
+        Button logTokenButton = (Button) findViewById(R.id.logTokenButton);
+        logTokenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get token
+                String token = FirebaseInstanceId.getInstance().getToken();
+
+                // Log and toast
+                String msg = getString(R.string.msg_token_fmt, token);
+                Log.d(TAG, msg);
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button subscribeButton = (Button) findViewById(R.id.subscribeButton);
+        subscribeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // [START subscribe_topics]
+                FirebaseMessaging.getInstance().subscribeToTopic("news");
+                // [END subscribe_topics]
+
+                // Log and toast
+                String msg = getString(R.string.msg_subscribed);
+                Log.d(TAG, msg);
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setLogoListener() {
