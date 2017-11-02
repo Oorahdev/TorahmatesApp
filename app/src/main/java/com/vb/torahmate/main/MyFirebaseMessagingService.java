@@ -62,17 +62,17 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Map<String, String> receivedMap = remoteMessage.getData();
             String message = receivedMap.get(remoteMessage.getData());
             if (receivedMap.get("action").equalsIgnoreCase("loadurl")){
-                try {
-                    URL loadurl = new URL(receivedMap.get("url"));
+               // try {
+                    //URL loadurl = new URL(receivedMap.get("url"));
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse
-                            ("https://stackoverflow.com/questions/2201917/how-can-i-open-a-url-in-androids-web-browser-from-my-application"));
+                            (receivedMap.get("url")));
                     startActivity(i);
 
 
-                }catch(MalformedURLException mue){
-                    mue.printStackTrace();
-                }
+               // }catch(MalformedURLException mue){
+               //     mue.printStackTrace();
+               // }
             }
 
             /*String url = receivedMap.get("url");
