@@ -1,0 +1,22 @@
+{
+  "name": "torahmates",
+  "version": "1.0.0",
+  "description": "TorahMates App",
+  "main": "MainActivity.java",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oorahdev/TorahmatesApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oorahdev/TorahmatesApp/issues"
+  },
+  "homepage": "https://github.com/Oorahdev/TorahmatesApp#readme",
+  "dependencies": {
+    "firebase-admin": "^5.4.3"
+  }
+}

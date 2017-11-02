@@ -20,6 +20,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.vb.torahmate.R;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 
@@ -60,6 +61,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
             Map<String, String> receivedMap = remoteMessage.getData();
             String message = receivedMap.get(remoteMessage.getData());
+            if (receivedMap.get("action").equalsIgnoreCase("loadurl")){
+                try {
+                    URL loadurl = new URL(receivedMap.get("url"));
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse
+                            ("https://stackoverflow.com/questions/2201917/how-can-i-open-a-url-in-androids-web-browser-from-my-application"));
+                    startActivity(i);
+
+
+                }catch(MalformedURLException mue){
+                    mue.printStackTrace();
+                }
+            }
 
             /*String url = receivedMap.get("url");
             try {
