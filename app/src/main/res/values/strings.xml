@@ -95,7 +95,7 @@
     <string name="info_caption">Info</string>
     <string name="user_name_txt">Username</string>
     <string name="missing_fields">Enter values in missing fields!</string>
-     <string name="info_text"><b>Minutes:</b>\n\nMaximum minutes per session is 60\nMaximum minutes per week is 120\nWeek starts Saturday night.\n\nTo earn miles, your minutes need to match up with your partner\'s report of minutes.
+    <string name="info_text"><b>Minutes:</b>\n\nMaximum minutes per session is 60\nMaximum minutes per week is 120\nWeek starts Saturday night.\n\nTo earn miles, your minutes need to match up with your partner\'s report of minutes.
      </string>
     <string name="report_learning_fragment">reportLearningFragment</string>
     <string name="no_PhoneNumber">There is no phone number in our system. Please call your TM coordinator to update account info.</string>
@@ -159,7 +159,6 @@
 
     <string name="welcome">Welcome!</string>
     <string name="miles_title">Miles Balance</string>
-
 
 
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>

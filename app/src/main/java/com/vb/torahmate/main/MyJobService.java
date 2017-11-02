@@ -17,12 +17,12 @@ public class MyJobService extends JobService {
     public boolean onStartJob(JobParameters jobParameters) {
         Log.d(TAG, "Performing long running task in scheduled job");
         // TODO(developer): add long running task here.
-        return false;
+        return false; //answers the question: "is there still work going on?"
     }
 
     @Override
     public boolean onStopJob(JobParameters jobParameters) {
-        return false;
+        return false;  //answers the question: "should this job be retried?"
     }
 
 

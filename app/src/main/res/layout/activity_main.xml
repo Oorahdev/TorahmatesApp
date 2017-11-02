@@ -28,14 +28,6 @@
                 android:layout_below="@+id/message_bar"
                 android:visibility="visible">
 
-                <Button
-                    android:id="@+id/subscribeButton"
-                    android:layout_width="223dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/subscribe_to_news" />
-
                 <TextView
                     android:id="@+id/message_bar"
                     android:layout_width="match_parent"
@@ -51,13 +43,6 @@
                     android:text="@string/connection_msg"
                     android:textColor="@color/white"
                     android:visibility="invisible" />
-
-                <Button
-                    android:id="@+id/logTokenButton"
-                    android:layout_width="@dimen/standard_field_width"
-                    android:layout_height="72dp"
-                    android:layout_gravity="top|center_horizontal"
-                    android:text="@string/log_token" />
 
             </FrameLayout>
 

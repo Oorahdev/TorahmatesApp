@@ -6,8 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.view.View;
+import android.webkit.WebView;
 
 import com.firebase.jobdispatcher.Constraint;
 import com.firebase.jobdispatcher.FirebaseJobDispatcher;
@@ -16,6 +19,10 @@ import com.firebase.jobdispatcher.Job;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.vb.torahmate.R;
+
+import java.net.URL;
+import java.util.Map;
+
 
 /**
  * Created by twender on 10/24/2017.
@@ -44,12 +51,24 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // [END_EXCLUDE]
 
         // TODO(developer): Handle FCM messages here.
+
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+            Map<String, String> receivedMap = remoteMessage.getData();
+            String message = receivedMap.get(remoteMessage.getData());
+
+            /*String url = receivedMap.get("url");
+            try {
+                URL link = new URL(url);
+            } catch(Exception e){
+                e.printStackTrace();
+            }*/
+            //showNotificationWithURLAction(url);
+            sendNotification(message);
 
             if (/* Check if data needs to be processed by long running job */ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
@@ -100,6 +119,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private void sendNotification(String messageBody) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //if (/*messageBody is a URL */ true) {
+            /*intent = new Intent(this, WebViewActivity.class);
+            intent.setData(Uri.parse(messageBody));
+            Bundle bundle = new Bundle();
+            bundle.putString("url", messageBody);
+            intent.putExtras(bundle);
+            startActivity(intent);*/
+        //}
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
@@ -119,4 +146,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
+
+
 }
