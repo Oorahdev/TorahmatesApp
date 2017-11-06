@@ -22,7 +22,12 @@ import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.vb.torahmate.utils.Constants;
+import com.vb.torahmate.utils.HttpRequest;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 
 /**
@@ -33,6 +38,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
 
     private static final String TAG = "MyFirebaseIIDService";
+    //ConnectionClass connectionClass;
 
     /**
      * Called if InstanceID token is updated. This may occur if the security of
@@ -46,6 +52,29 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
 
+        //send refreshed token to database
+      /*  try {
+            //connect to database
+            connectionClass = new ConnectionClass();
+            Connection con = connectionClass.connection();
+            if (con == null) {
+                Log.d(TAG, "error in connection with sql server");
+            }
+            //update token
+            else {
+                String query = "update tKVMLO\n" +
+                        "set KVMLO_RegistrationToken = " + refreshedToken + "\n" +
+                        "where KVMLO_LoginCode == " + Constants.USER_NAME + ";";
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                if (!rs.next()) {
+                    Log.d(TAG, "error executing query");
+                }
+            }
+        }
+        catch(Exception e) {
+            Log.d(TAG, e.getMessage());
+        }*/
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.

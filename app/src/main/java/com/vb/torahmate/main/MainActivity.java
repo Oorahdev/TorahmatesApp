@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements
     public static TextView messageBar;
     IntentFilter s_intentFilter = new IntentFilter();
 
+
     private static final String TAG = "MainActivity";
 
     @Override

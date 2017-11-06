@@ -25,6 +25,7 @@ public class AppURL {
     public static final String subUrlMileagePlaceCall = "MileagePlaceCall";
     public static final String subUrlMileageLoginInfo = "MileageLoginInfo";
     public static final String subUrlMileageDashboard = "MileageDashboard";
+    //public static final String subUrlUpdateToken = "";
     //    service url
     public static final String urlLogin = BASE_URL + subUrlLogin;
     public static final String urlContactList = BASE_URL + subUrlContactList;
@@ -41,4 +42,5 @@ public class AppURL {
     public static final String urlMileagePlaceCall = BASE_URL + subUrlMileagePlaceCall;
     public static final String urlMileageLoginInfo = BASE_URL + subUrlMileageLoginInfo;
     public static final String urlMileageDashboard = BASE_URL + subUrlMileageDashboard;
+    //public static final String urlUpdateToken = BASE_URL + subUrlUpdateToken;
 }
