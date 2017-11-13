@@ -22,12 +22,21 @@ import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.gson.JsonObject;
+import com.path.android.jobqueue.JobManager;
+import com.vb.torahmate.R;
+import com.vb.torahmate.events.ErrorEvent;
+import com.vb.torahmate.events.UpdateTokenEvent;
+import com.vb.torahmate.jobs.UpdateTokenJob;
+import com.vb.torahmate.utils.AppManager;
+import com.vb.torahmate.utils.AppURL;
 import com.vb.torahmate.utils.Constants;
 import com.vb.torahmate.utils.HttpRequest;
+import com.vb.torahmate.utils.L;
+import com.vb.torahmate.utils.SPAccountsManager;
+import com.vb.torahmate.utils.Util;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import static com.vb.torahmate.utils.Util.mConnReceiver;
 
 
 /**
@@ -38,6 +47,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
 
     private static final String TAG = "MyFirebaseIIDService";
+    private JobManager mJobManager = AppManager.getInstance().getJobManager();
     //ConnectionClass connectionClass;
 
     /**
@@ -52,7 +62,32 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
 
+        //run UpdateTokenJob
+        runJob(refreshedToken);
+
         //send refreshed token to database
+       /* HttpRequest request = HttpRequest.post(AppURL.urlUpdateToken);
+        request.header(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
+        request.header(Constants.RegistrationToken, refreshedToken);
+        L.m(request + "");
+        request.connectTimeout(30000);
+        if (request.ok()) {
+            String responseStr = request.body();
+            //JsonReader reader = new JsonReader(new StringReader(responseStr));
+            //reader.setLenient(true);
+            JsonObject obj = AppManager.getInstance().getGSON().fromJson(responseStr, JsonObject.class);
+            //JsonObject obj = AppManager.getInstance().getGSON().fromJson(reader.toString(), JsonObject.class);
+            String resultStr = obj.get(Constants.TYPE).getAsString();
+            if (resultStr.equals(Constants.SUCCESS_RESPONSE)) {
+
+                AppManager.getInstance().getEventBus().post(new UpdateTokenEvent(Constants.SUCCESS_RESPONSE));
+            } else if (resultStr.equals(Constants.ERROR_RESPONSE)) {
+                String msg = obj.get(Constants.MESSAGE).getAsString();
+                AppManager.getInstance().getEventBus().post(new ErrorEvent(msg));
+            }
+        }else {
+            Util.showToast(AppManager.getAppContext(), AppManager.getAppContext().getResources().getString(R.string.timeOut));
+        }*/
       /*  try {
             //connect to database
             connectionClass = new ConnectionClass();
@@ -92,6 +127,25 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
      */
     private void sendRegistrationToServer(String token) {
         // TODO: Implement this method to send token to your app server.
+    }
+
+    @Override
+    public void onDestroy() {
+        // TODO Auto-generated method stub
+
+        try{
+            if(mConnReceiver!=null)
+                unregisterReceiver(mConnReceiver);
+        }catch(Exception e)
+        {
+
+        }
+        super.onDestroy();
+
+    }
+
+    private void runJob(String refreshedToken) {
+        mJobManager.addJobInBackground(new UpdateTokenJob(refreshedToken));
     }
 }
 

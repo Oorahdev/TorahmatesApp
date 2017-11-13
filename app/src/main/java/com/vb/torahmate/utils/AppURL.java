@@ -7,8 +7,9 @@ public class AppURL {
     //    Base url
     public static final String API_KEY = "92bRf8915cT7adFe4b25e45493b298801";
     public static final String SECRET_KEY = "9W97Ac9b8dE0a7njd2c52bkW9Ou7T";
-    //public static final String BASE_URL = "http://69.16.236.89/NativeApp/";
-    public static final String BASE_URL = "http://api.torahmates.org/";
+    public static final String BASE_URL = "http://69.16.236.89/NativeApp/";
+    //public static final String BASE_URL = "http://api.torahmates.org/";
+    //public static final String BASE_URL = "http://localhost/torahmateapi/";
     //Sub url
     public static final String subUrlForgetPassword = "forget_password?";
     public static final String subUrlLogin = "MileageLoginMobile";
@@ -25,7 +26,7 @@ public class AppURL {
     public static final String subUrlMileagePlaceCall = "MileagePlaceCall";
     public static final String subUrlMileageLoginInfo = "MileageLoginInfo";
     public static final String subUrlMileageDashboard = "MileageDashboard";
-    //public static final String subUrlUpdateToken = "";
+    public static final String subUrlUpdateToken = "MileageUpdateToken";
     //    service url
     public static final String urlLogin = BASE_URL + subUrlLogin;
     public static final String urlContactList = BASE_URL + subUrlContactList;
@@ -42,5 +43,5 @@ public class AppURL {
     public static final String urlMileagePlaceCall = BASE_URL + subUrlMileagePlaceCall;
     public static final String urlMileageLoginInfo = BASE_URL + subUrlMileageLoginInfo;
     public static final String urlMileageDashboard = BASE_URL + subUrlMileageDashboard;
-    //public static final String urlUpdateToken = BASE_URL + subUrlUpdateToken;
+    public static final String urlUpdateToken = BASE_URL + subUrlUpdateToken;
 }

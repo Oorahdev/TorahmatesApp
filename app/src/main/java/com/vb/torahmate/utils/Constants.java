@@ -81,5 +81,7 @@ public class Constants {
     public static String MilesUsed = "MilesUsed";
     public static String MilesTotal = "MilesTotal";
 
+    public static String RegistrationToken = "rtoken";
+
 
 }
