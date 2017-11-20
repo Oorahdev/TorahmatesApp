@@ -24,8 +24,7 @@ public class WebViewActivity extends Activity {
         setContentView(R.layout.activity_web_view);
         extras = getIntent().getExtras();
         if (extras != null){
-            loadurl = extras.getString("url",
-                    "https://github.com/firebase/quickstart-android/blob/master/messaging/app/src/main/AndroidManifest.xml");
+            loadurl = extras.getString("url");
         }
         webView = (WebView) findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);

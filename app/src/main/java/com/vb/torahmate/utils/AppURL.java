@@ -7,8 +7,8 @@ public class AppURL {
     //    Base url
     public static final String API_KEY = "92bRf8915cT7adFe4b25e45493b298801";
     public static final String SECRET_KEY = "9W97Ac9b8dE0a7njd2c52bkW9Ou7T";
-    public static final String BASE_URL = "http://69.16.236.89/NativeApp/";
-    //public static final String BASE_URL = "http://api.torahmates.org/";
+    //public static final String BASE_URL = "http://69.16.236.89/NativeApp/";
+    public static final String BASE_URL = "http://api.torahmates.org/";
     //public static final String BASE_URL = "http://localhost/torahmateapi/";
     //Sub url
     public static final String subUrlForgetPassword = "forget_password?";

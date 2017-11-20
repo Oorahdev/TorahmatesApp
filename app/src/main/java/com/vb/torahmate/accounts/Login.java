@@ -46,7 +46,9 @@ import com.vb.torahmate.jobs.DashboardJob;
 import com.vb.torahmate.jobs.LoginInfoJob;
 import com.vb.torahmate.jobs.LoginJob;
 import com.vb.torahmate.jobs.MileageGetSessionsJob;
+import com.vb.torahmate.jobs.UpdateTokenJob;
 import com.vb.torahmate.main.MainActivity;
+import com.vb.torahmate.main.MyFirebaseInstanceIDService;
 import com.vb.torahmate.utils.AppManager;
 import com.vb.torahmate.utils.ConnectionPreferences;
 import com.vb.torahmate.utils.Constants;
@@ -272,12 +274,17 @@ public class Login extends FragmentActivity implements OnClickListener {
         Util.cancelToast();
         hideKeyboard();
 
-        runningTasks = 5;
+        runningTasks = 6;
         mJobManager.addJobInBackground(new LoginInfoJob());
         mJobManager.addJobInBackground(new DashboardJob());
         mJobManager.addJobInBackground(new MileageGetSessionsJob());
         mJobManager.addJobInBackground(new CallTorahmateJob(this.getClass().getSimpleName()));
         mJobManager.addJobInBackground(new ContactTorahmateJob());
+        MyFirebaseInstanceIDService Iid = new MyFirebaseInstanceIDService();
+        String refreshedToken = Iid.getRefreshedToken();
+        if (refreshedToken != null) {
+            mJobManager.addJobInBackground(new UpdateTokenJob(refreshedToken));
+        }
     }
 
     public void onEventMainThread(Event event) {

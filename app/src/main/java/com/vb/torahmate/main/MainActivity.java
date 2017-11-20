@@ -31,6 +31,8 @@ import com.path.android.jobqueue.JobManager;
 import com.vb.torahmate.R;
 import com.vb.torahmate.accounts.Login;
 import com.vb.torahmate.events.ErrorEvent;
+import com.vb.torahmate.jobs.UpdateTokenJob;
+import com.vb.torahmate.main.MyFirebaseInstanceIDService;
 import com.vb.torahmate.models.GetTorahmatesModel;
 import com.vb.torahmate.models.MilesReportLearningModel;
 import com.vb.torahmate.utils.AppManager;
@@ -133,6 +135,10 @@ public class MainActivity extends AppCompatActivity implements
         } else {
             finish();
             startActivity(new Intent(MainActivity.this, Login.class));
+            /*MyFirebaseInstanceIDService Iid = new MyFirebaseInstanceIDService();
+            String refreshedToken = Iid.getRefreshedToken();
+            mJobManager.addJobInBackground(new UpdateTokenJob(refreshedToken));*/
+
         }
     }
 

@@ -1,7 +1,9 @@
 package com.vb.torahmate.main;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
@@ -19,6 +21,7 @@ import com.firebase.jobdispatcher.Job;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.vb.torahmate.R;
+import com.vb.torahmate.utils.AppManager;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -32,6 +35,8 @@ import java.util.Map;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
+    //public static Intent i = new Intent(Intent.ACTION_VIEW);
+    Context context = AppManager.getAppContext().getApplicationContext();
 
     /**
      * Called when message is received.
@@ -67,7 +72,25 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse
                             (receivedMap.get("url")));
-                    startActivity(i);
+                    //startActivity(i);
+                    //Intent i = new Intent(this, WebViewActivity.class);
+                //i.putExtra("url", receivedMap.get("url"));
+                //i.putExtra("message", receivedMap.get("message"));
+                //i.putExtra("message", receivedMap.get("message"));
+
+
+                //PendingIntent pi = PendingIntent.getActivity(context, 0, i, 0);
+                Notification notification = new NotificationCompat.Builder(context)
+                        .setTicker(receivedMap.get("message"))
+                        .setContentTitle(receivedMap.get("message"))
+                        .setContentText(receivedMap.get("message"))
+                //        .setContentIntent(pi)
+                        .setAutoCancel(true)
+                        .build();
+                NotificationManager notificationManager =
+                        (NotificationManager) context.getSystemService(Service.NOTIFICATION_SERVICE);
+                notificationManager.notify(0, notification);
+                //startActivity(i);
 
 
                // }catch(MalformedURLException mue){

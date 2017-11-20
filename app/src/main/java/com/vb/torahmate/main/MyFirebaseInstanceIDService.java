@@ -18,6 +18,7 @@ package com.vb.torahmate.main;
 
 
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -25,8 +26,10 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.gson.JsonObject;
 import com.path.android.jobqueue.JobManager;
 import com.vb.torahmate.R;
+import com.vb.torahmate.accounts.Login;
 import com.vb.torahmate.events.ErrorEvent;
 import com.vb.torahmate.events.UpdateTokenEvent;
+import com.vb.torahmate.jobs.LoginJob;
 import com.vb.torahmate.jobs.UpdateTokenJob;
 import com.vb.torahmate.utils.AppManager;
 import com.vb.torahmate.utils.AppURL;
@@ -48,6 +51,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private static final String TAG = "MyFirebaseIIDService";
     private JobManager mJobManager = AppManager.getInstance().getJobManager();
+    public String refreshedToken;
     //ConnectionClass connectionClass;
 
     /**
@@ -59,11 +63,11 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     @Override
     public void onTokenRefresh() {
         // Get updated InstanceID token.
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
 
         //run UpdateTokenJob
-        runJob(refreshedToken);
+        //runJob(refreshedToken);
 
         //send refreshed token to database
        /* HttpRequest request = HttpRequest.post(AppURL.urlUpdateToken);
@@ -146,6 +150,11 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private void runJob(String refreshedToken) {
         mJobManager.addJobInBackground(new UpdateTokenJob(refreshedToken));
+    }
+
+    public String getRefreshedToken() {
+        //return this.refreshedToken;
+        return FirebaseInstanceId.getInstance().getToken();
     }
 }
 

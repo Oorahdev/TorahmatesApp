@@ -1,5 +1,9 @@
 package com.vb.torahmate.jobs;
 
+import android.util.Log;
+
+import com.google.common.collect.ImmutableBiMap;
+import com.google.common.collect.ImmutableMap;
 import com.google.gson.JsonObject;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
@@ -16,6 +20,8 @@ import com.vb.torahmate.utils.Util;
 
 import org.json.JSONException;
 
+import java.util.Map;
+
 /**
  * Created by twender on 11/13/2017.
  */
@@ -23,6 +29,7 @@ import org.json.JSONException;
 public class UpdateTokenJob extends Job {
 
         private static String mToken;
+        private static String TAG = UpdateTokenJob.class.getCanonicalName();
 
         public UpdateTokenJob(String token) {
             super(new Params(Constants.PRIORITY).requireNetwork().persist());
@@ -54,8 +61,17 @@ public class UpdateTokenJob extends Job {
 
         private void getData() throws JSONException {
             HttpRequest request = HttpRequest.post(AppURL.urlUpdateToken);
-            request.header(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
-            request.header(Constants.RegistrationToken, mToken);
+            Map<String, String> headers = ImmutableMap.of(
+                    Constants.HEADER, "cd1075d848a5e0142bd3b5d66726041c",
+                    Constants.RegistrationToken, mToken
+            );
+            request.headers(headers);
+            //headers.put(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
+            //request.part(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
+            //request.part(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
+            //request.header(Constants.HEADER, "cd1075d848a5e0142bd3b5d66726041c");
+            //request.body(Constants.RegistrationToken, mToken);
+            //request.part(Constants.RegistrationToken, mToken);
             L.m(request + "");
             request.connectTimeout(30000);
             if (request.ok()) {
