@@ -69,27 +69,38 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             if (receivedMap.get("action").equalsIgnoreCase("loadurl")){
                // try {
                     //URL loadurl = new URL(receivedMap.get("url"));
-                    Intent i = new Intent(Intent.ACTION_VIEW);
+                Uri url = Uri.parse(receivedMap.get("url"));
+                Intent i = new Intent(Intent.ACTION_VIEW, url);
+                startActivity(i);
+                    /*Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse
                             (receivedMap.get("url")));
-                    //startActivity(i);
-                    //Intent i = new Intent(this, WebViewActivity.class);
-                //i.putExtra("url", receivedMap.get("url"));
+                    startActivity(i);*/
+              /* Intent i = new Intent(this, WebViewActivity.class);
+                i.putExtra("url", receivedMap.get("url"));
+                startActivity(i);*/
                 //i.putExtra("message", receivedMap.get("message"));
                 //i.putExtra("message", receivedMap.get("message"));
+              /* i.setAction(Intent.ACTION_MAIN);
+                i.addCategory(Intent.CATEGORY_LAUNCHER);
 
 
-                //PendingIntent pi = PendingIntent.getActivity(context, 0, i, 0);
-                Notification notification = new NotificationCompat.Builder(context)
-                        .setTicker(receivedMap.get("message"))
+                PendingIntent pi = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
+
+               NotificationCompat.Builder notification = new NotificationCompat.Builder(this)
+                        *//*.setTicker(receivedMap.get("message"))
                         .setContentTitle(receivedMap.get("message"))
                         .setContentText(receivedMap.get("message"))
                 //        .setContentIntent(pi)
                         .setAutoCancel(true)
-                        .build();
+                        .build();*//*
+                        .setContentTitle(receivedMap.get("title"))
+                       .setContentText(receivedMap.get("content"))
+                       .setAutoCancel(true)
+                       .setContentIntent(pi);
                 NotificationManager notificationManager =
                         (NotificationManager) context.getSystemService(Service.NOTIFICATION_SERVICE);
-                notificationManager.notify(0, notification);
+                notificationManager.notify(0, notification.build());*/
                 //startActivity(i);
 
 

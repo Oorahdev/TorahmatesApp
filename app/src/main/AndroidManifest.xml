@@ -64,6 +64,8 @@
             android:name=".calls.CustomCallingScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
+        <activity android:name=".main.WebViewActivity"/>
+
 
         <!-- <activity -->
         <!-- android:name="com.vb.torahmate.settings.AlertMessageActivity" -->

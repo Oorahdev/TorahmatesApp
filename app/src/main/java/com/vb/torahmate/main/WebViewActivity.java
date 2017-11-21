@@ -26,6 +26,9 @@ public class WebViewActivity extends Activity {
         if (extras != null){
             loadurl = extras.getString("url");
         }
+        else {
+            loadurl = "www.google.com";
+        }
         webView = (WebView) findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(loadurl);
