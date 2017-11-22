@@ -66,41 +66,42 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
             Map<String, String> receivedMap = remoteMessage.getData();
             String message = receivedMap.get(remoteMessage.getData());
-            if (receivedMap.get("action").equalsIgnoreCase("loadurl")){
-               // try {
-                    //URL loadurl = new URL(receivedMap.get("url"));
-                Uri url = Uri.parse(receivedMap.get("url"));
-                Intent i = new Intent(Intent.ACTION_VIEW, url);
-                startActivity(i);
+//            if (receivedMap.get("action").equalsIgnoreCase("loadurl")){
+//               // try {
+//                    //URL loadurl = new URL(receivedMap.get("url"));
+//                Uri url = Uri.parse(receivedMap.get("url"));
+//                Intent i = new Intent(Intent.ACTION_VIEW, url);
+//                startActivity(i);
                     /*Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse
                             (receivedMap.get("url")));
-                    startActivity(i);*/
-              /* Intent i = new Intent(this, WebViewActivity.class);
+                    startActivity(i);//*
+              *//* Intent i = new Intent(this, WebViewActivity.class);
                 i.putExtra("url", receivedMap.get("url"));
-                startActivity(i);*/
+                startActivity(i);*//*
+                }
                 //i.putExtra("message", receivedMap.get("message"));
                 //i.putExtra("message", receivedMap.get("message"));
-              /* i.setAction(Intent.ACTION_MAIN);
+              *//* i.setAction(Intent.ACTION_MAIN);
                 i.addCategory(Intent.CATEGORY_LAUNCHER);
 
 
                 PendingIntent pi = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
 
                NotificationCompat.Builder notification = new NotificationCompat.Builder(this)
-                        *//*.setTicker(receivedMap.get("message"))
+                        *//**//*.setTicker(receivedMap.get("message"))
                         .setContentTitle(receivedMap.get("message"))
                         .setContentText(receivedMap.get("message"))
                 //        .setContentIntent(pi)
                         .setAutoCancel(true)
-                        .build();*//*
+                        .build();*//**//*
                         .setContentTitle(receivedMap.get("title"))
                        .setContentText(receivedMap.get("content"))
                        .setAutoCancel(true)
                        .setContentIntent(pi);
                 NotificationManager notificationManager =
                         (NotificationManager) context.getSystemService(Service.NOTIFICATION_SERVICE);
-                notificationManager.notify(0, notification.build());*/
+                notificationManager.notify(0, notification.build());*//*
                 //startActivity(i);
 
 
@@ -116,7 +117,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 e.printStackTrace();
             }*/
             //showNotificationWithURLAction(url);
-            sendNotification(message);
+            //sendNotification(message);
+            sendNotification(remoteMessage);
 
             if (/* Check if data needs to be processed by long running job */ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
@@ -164,7 +166,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      *
      * @param messageBody FCM message body received.
      */
-    private void sendNotification(String messageBody) {
+    //private void sendNotification(String messageBody) {
+    private void sendNotification(RemoteMessage messageBody){
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //if (/*messageBody is a URL */ true) {
@@ -175,16 +178,31 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.putExtras(bundle);
             startActivity(intent);*/
         //}
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+
+        Map<String, String> receivedMap = messageBody.getData();
+
+
+        PendingIntent pendingIntent;
+        if (receivedMap.get("action").equals("loadurl")){
+            System.out.println("Hi from action=loadurl");
+            intent = new Intent(this, WebViewActivity.class);
+            intent.putExtra("url", receivedMap.get("url"));
+        }
+        pendingIntent= PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
+
+
 
         String channelId = getString(R.string.default_notification_channel_id);
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_info)
-                        .setContentTitle("FCM Message")
-                        .setContentText(messageBody)
+                        //.setContentTitle("FCM Message")
+                        .setContentTitle(receivedMap.get("title"))
+                        //.setContentText(messageBody)
+                        .setContentText(receivedMap.get("message"))//it works!
+                        //.setContentText("test content text")//this works
                         .setAutoCancel(true)
                         .setSound(defaultSoundUri)
                         .setContentIntent(pendingIntent);
@@ -192,7 +210,22 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
+//        if (receivedMap.get("action").equals("loadurl"))
+//        {
+//            intent = new Intent(this, WebViewActivity.class);
+//            intent.setData(Uri.parse(receivedMap.get("content")));
+//            Bundle bundle = new Bundle();
+//            bundle.putString("url", receivedMap.get("url"));
+//            intent.putExtras(bundle);
+//            //startActivity(intent);
+//            pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+//                    PendingIntent.FLAG_ONE_SHOT);
+//            notificationBuilder.setContentIntent(pendingIntent);
+//        }
+
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+
+
     }
 
 
