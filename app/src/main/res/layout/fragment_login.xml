@@ -229,6 +229,7 @@
                     android:background="@drawable/login_bg_selector"
                     android:text="@string/btn_sign_in_txt"
                     android:visibility="invisible"
+                    android:textColor="@color/white"
                     app:pix_font="fonts/OpenSans-Regular.ttf"/>
             </LinearLayout>
         </LinearLayout>

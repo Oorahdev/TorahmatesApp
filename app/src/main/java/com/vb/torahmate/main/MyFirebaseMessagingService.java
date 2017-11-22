@@ -185,8 +185,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent;
         if (receivedMap.get("action").equals("loadurl")){
             System.out.println("Hi from action=loadurl");
+            //to view in webview:
             intent = new Intent(this, WebViewActivity.class);
             intent.putExtra("url", receivedMap.get("url"));
+            //to view in Chrome:
+            //intent = new Intent(Intent.ACTION_VIEW);
+            //intent.setData(Uri.parse(receivedMap.get("url")));
         }
         pendingIntent= PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
