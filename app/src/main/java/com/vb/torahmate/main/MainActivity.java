@@ -135,9 +135,6 @@ public class MainActivity extends AppCompatActivity implements
         } else {
             finish();
             startActivity(new Intent(MainActivity.this, Login.class));
-            /*MyFirebaseInstanceIDService Iid = new MyFirebaseInstanceIDService();
-            String refreshedToken = Iid.getRefreshedToken();
-            mJobManager.addJobInBackground(new UpdateTokenJob(refreshedToken));*/
 
         }
     }

@@ -70,50 +70,8 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         //runJob(refreshedToken);
 
         //send refreshed token to database
-       /* HttpRequest request = HttpRequest.post(AppURL.urlUpdateToken);
-        request.header(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
-        request.header(Constants.RegistrationToken, refreshedToken);
-        L.m(request + "");
-        request.connectTimeout(30000);
-        if (request.ok()) {
-            String responseStr = request.body();
-            //JsonReader reader = new JsonReader(new StringReader(responseStr));
-            //reader.setLenient(true);
-            JsonObject obj = AppManager.getInstance().getGSON().fromJson(responseStr, JsonObject.class);
-            //JsonObject obj = AppManager.getInstance().getGSON().fromJson(reader.toString(), JsonObject.class);
-            String resultStr = obj.get(Constants.TYPE).getAsString();
-            if (resultStr.equals(Constants.SUCCESS_RESPONSE)) {
+        //this happens in Login.java because it can only be entered into kvmlo once user logs in
 
-                AppManager.getInstance().getEventBus().post(new UpdateTokenEvent(Constants.SUCCESS_RESPONSE));
-            } else if (resultStr.equals(Constants.ERROR_RESPONSE)) {
-                String msg = obj.get(Constants.MESSAGE).getAsString();
-                AppManager.getInstance().getEventBus().post(new ErrorEvent(msg));
-            }
-        }else {
-            Util.showToast(AppManager.getAppContext(), AppManager.getAppContext().getResources().getString(R.string.timeOut));
-        }*/
-      /*  try {
-            //connect to database
-            connectionClass = new ConnectionClass();
-            Connection con = connectionClass.connection();
-            if (con == null) {
-                Log.d(TAG, "error in connection with sql server");
-            }
-            //update token
-            else {
-                String query = "update tKVMLO\n" +
-                        "set KVMLO_RegistrationToken = " + refreshedToken + "\n" +
-                        "where KVMLO_LoginCode == " + Constants.USER_NAME + ";";
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-                if (!rs.next()) {
-                    Log.d(TAG, "error executing query");
-                }
-            }
-        }
-        catch(Exception e) {
-            Log.d(TAG, e.getMessage());
-        }*/
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.

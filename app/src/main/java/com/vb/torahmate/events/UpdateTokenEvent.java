@@ -10,14 +10,6 @@ import java.util.List;
 
 public class UpdateTokenEvent extends Event{
 
-    /*private final List<UpdateTokenModel> updateToken;
-
-    public UpdateTokenEvent(List<UpdateTokenModel> updateTokenList) {
-        this.updateToken = updateTokenList;
-    }
-
-    public List<UpdateTokenModel> getList() {return updateToken;}*/
-
     private final String mMessage;
 
     public UpdateTokenEvent(String message) {

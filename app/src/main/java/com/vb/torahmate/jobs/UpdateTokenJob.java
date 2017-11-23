@@ -66,20 +66,11 @@ public class UpdateTokenJob extends Job {
                     Constants.RegistrationToken, mToken
             );
             request.headers(headers);
-            //headers.put(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
-            //request.part(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
-            //request.part(Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()));
-            //request.header(Constants.HEADER, "cd1075d848a5e0142bd3b5d66726041c");
-            //request.body(Constants.RegistrationToken, mToken);
-            //request.part(Constants.RegistrationToken, mToken);
             L.m(request + "");
             request.connectTimeout(30000);
             if (request.ok()) {
                 String responseStr = request.body();
-                //JsonReader reader = new JsonReader(new StringReader(responseStr));
-                //reader.setLenient(true);
                 JsonObject obj = AppManager.getInstance().getGSON().fromJson(responseStr, JsonObject.class);
-                //JsonObject obj = AppManager.getInstance().getGSON().fromJson(reader.toString(), JsonObject.class);
                 String resultStr = obj.get(Constants.TYPE).getAsString();
                 if (resultStr.equals(Constants.SUCCESS_RESPONSE)) {
 
