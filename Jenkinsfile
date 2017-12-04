@@ -20,7 +20,7 @@ pipeline {
 
 		    steps{
                 //sign android apk
-                step([$class: 'SignApksBuilder', apksToSign: 'app/build/outputs/apk/*.apk', archiveUnsignedApks: true,
+                step([$class: 'SignApksBuilder', apksToSign: '**/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey'])
                 //upload app to google play
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
