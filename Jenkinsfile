@@ -17,10 +17,7 @@ pipeline {
 
 
 		stage('Deploy') {
-		    when {
-		        //only sign and upload app if there is a new version available
-		        expression {    fileExists 'app/*.apk'  }
-		    }
+		    
 		    steps{
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', keyAlias: 'tmappkey',
