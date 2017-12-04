@@ -19,7 +19,7 @@ pipeline {
 		stage('Deploy') {
 		    when {
 		        //only sign and upload app if there is a new version available
-		        fileExists 'app/*.apk'
+		        expression {    fileExists 'app/*.apk'  }
 		    }
 		    steps{
                 //sign android apk
