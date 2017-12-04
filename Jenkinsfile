@@ -1,4 +1,6 @@
 pipeline {
+
+    agent any
 	
 	stages {
 		stage('Build') {
@@ -14,7 +16,7 @@ pipeline {
 		}
 		stage('Test') {
 			//run tests
-			
+
 		}
 		stage('Deploy') {
 		    steps{
