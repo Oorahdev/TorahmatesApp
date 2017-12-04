@@ -11,7 +11,6 @@ pipeline {
                     url: 'https://github.com/Oorahdev/TorahMatesApp-FCM_XMPP_Server'],
                     [credentialsId: 'feac2ef8-3a88-4107-945e-4f359bf1a984', url: 'https://github.com/Oorahdev/TorahmatesApp']]])
                 //build tmapp apk from github
-                build 'TorahMates App'
                }
 			
 		}
