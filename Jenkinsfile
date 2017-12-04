@@ -15,7 +15,7 @@ pipeline {
 			
 		}
 
-		}
+		
 		stage('Deploy') {
 		    steps{
                 //sign android apk
