@@ -5,4 +5,5 @@
 .DS_Store
 .idea/
 /app/app.iml
+build/
 /torahmate_android.iml
