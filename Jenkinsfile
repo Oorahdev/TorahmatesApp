@@ -19,13 +19,8 @@ pipeline {
 		stage('Deploy') {
 		    steps{
                 //sign android apk
-                step(
-                    if ('app/*.apk') {
-                       [$class: 'SignApksBuilder', apksToSign: 'app/*.apk', keyAlias: 'tmappkey',
-                                               keyStoreId: 'tmappkey']
-                    }
-                   )
-
+                step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', keyAlias: 'tmappkey',
+                        keyStoreId: 'tmappkey'])
                 //upload app to google play
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
                     trackName: 'beta'
