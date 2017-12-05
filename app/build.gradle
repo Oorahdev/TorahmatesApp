@@ -18,7 +18,7 @@ android {
         manifestPlaceholders = [localApplicationId: "com.vb.torahmate"]
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 18
+        versionCode 20
         versionName "1.2"
     }
     buildTypes {
