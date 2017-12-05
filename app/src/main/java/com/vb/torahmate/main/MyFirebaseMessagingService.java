@@ -133,7 +133,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
         pendingIntent= PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
-
+ 
 
 
         String channelId = getString(R.string.default_notification_channel_id);
