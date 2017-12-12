@@ -1,4 +1,6 @@
+node {
 pipeline {
+}
 
     agent any
 	
@@ -17,7 +19,7 @@ pipeline {
 			
 		}
 
-		
+
 
 
 		stage('Deploy') {
@@ -33,4 +35,5 @@ pipeline {
 		}
 		
 	}
+}
 }
