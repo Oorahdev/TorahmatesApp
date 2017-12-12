@@ -1,6 +1,6 @@
-node {
+
 pipeline {
-}
+
 
     agent any
 	
@@ -35,5 +35,4 @@ pipeline {
 		}
 		
 	}
-}
 }
