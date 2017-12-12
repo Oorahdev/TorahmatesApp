@@ -15,8 +15,8 @@ pipeline {
                      //                     url: 'https://github.com/Oorahdev/TorahMatesApp-FCM_XMPP_Server']
                 //build tmapp apk from github
                 sh 'chmod +x gradlew'
-                sh 'chmod -R 777 *'
-                sh './gradlew tasks'
+                //sh 'chmod -R 777 *'
+                sh './gradlew tasks --stacktrace'
                 //sh './gradlew assembleRelease'
 
                }
