@@ -16,7 +16,7 @@ pipeline {
                 //build tmapp apk from github
                 sh 'chmod +x gradlew'
                 //sh 'chmod -R 777 *'
-                sh './gradlew tasks --info'
+                sh './gradlew tasks --debug'
                 //sh './gradlew assembleRelease'
 
                }
