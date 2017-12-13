@@ -16,9 +16,9 @@ pipeline {
                 //build tmapp apk from github
                 sh 'chmod +x gradlew'
                 sh 'chmod -R 777 *'
-                sh '$C:\Users\twender\AppData\Local\Android\Sdk\tools -avd Nexus_5X_API_26'
+                //sh '$C:\Users\twender\AppData\Local\Android\Sdk\tools -avd Nexus_5X_API_26'
                 //sh 'C:\Users\twender\.android\avd\Nexus_5X_API_26.avd'
-                //sh './gradlew tasks'
+                sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
 
                }
