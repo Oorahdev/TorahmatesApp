@@ -20,13 +20,13 @@ pipeline {
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
                 sh 'sudo chmod -R 777 *'
-                sh '(while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/bin/sdkmanager --licenses'
+                //sh '(while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/bin/sdkmanager --licenses'
 
                 sh 'ls'
 
                 sh 'chmod +x gradlew'
 
-                sh './gradlew tasks'
+                //sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
                }
 			
@@ -34,7 +34,7 @@ pipeline {
 
 
 
-/*
+
 		stage('Deploy') {
 
 		    steps{
@@ -46,7 +46,7 @@ pipeline {
                     trackName: 'beta'
                }
 		}
-		*/
+
 		
 	}
 }
