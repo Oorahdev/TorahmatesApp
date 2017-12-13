@@ -16,6 +16,7 @@ pipeline {
                 //build tmapp apk from github
                 sh 'chmod +x gradlew'
                 sh 'cd /opt'
+                sh 'ls'
                 sh 'sudo chmod -R 755 /opt/android-sdk-linux'
 
                 //sh './gradlew tasks'
