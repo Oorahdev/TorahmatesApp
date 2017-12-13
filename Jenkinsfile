@@ -19,7 +19,10 @@ pipeline {
                 sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
-               
+
+                sh 'mkdir "$ANDROID_HOME/licenses"'
+                sh 'echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"'
+
                 sh 'ls'
 
                 sh 'chmod +x gradlew'
