@@ -21,7 +21,7 @@ pipeline {
                 sh 'wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip'
                 sh 'rm -rf sdk-tools-linux-3859397.zip.*'
                 sh 'ls'
-                sh 'unzip sdk-tools-linux-3859397.zip'
+                sh 'unzi sdk-tools-linux-3859397.zip'
                 sh 'export ANDROID_HOME="/sdk/"'
                 sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
 
