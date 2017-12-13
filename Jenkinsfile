@@ -17,7 +17,7 @@ pipeline {
                 sh 'chmod +x gradlew'
                 sh 'cd /opt'
                 sh 'ls'
-                sh 'sudo chmod -R 755 /opt/android-sdk-linux'
+                sh 'sudo chmod -R 755 /android-sdk-linux'
 
                 //sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
