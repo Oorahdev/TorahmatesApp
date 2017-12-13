@@ -17,11 +17,11 @@ pipeline {
                 sh 'chmod +x gradlew'
                 sh 'chmod -R 777 *'
                 //load emulator
-                launchEmulator: {
+                step(launchEmulator: {
                             sh "C:\Users\twender\.android\avd\Nexus_5X_API_26.avd
                             -engine classic -prop persist.sys.language=en -prop persist.sys.country=US
                             -avd Nexus_5X_API_26 -no-snapshot-load -no-snapshot-save -no-window"
-                        }
+                        })
                 //sh '$C:\Users\twender\AppData\Local\Android\Sdk\tools -avd Nexus_5X_API_26'
                 //sh 'C:\Users\twender\.android\avd\Nexus_5X_API_26.avd'
                 sh './gradlew tasks'
