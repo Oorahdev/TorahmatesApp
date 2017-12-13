@@ -31,7 +31,7 @@ pipeline {
 
 
 
-
+/*
 		stage('Deploy') {
 
 		    steps{
@@ -43,6 +43,7 @@ pipeline {
                     trackName: 'beta'
                }
 		}
+		*/
 		
 	}
 }
