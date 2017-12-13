@@ -17,7 +17,7 @@ pipeline {
                 sh 'chmod +x gradlew'
                 sh 'chmod -R 777 *'
                 //install android sdk
-                sh 'rm -rf sdk-tools-linux-3859397.zip.1'
+                sh 'rm -rf sdk-tools-linux-3859397.zip.*'
                 sh 'wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip'
                 sh 'ls'
                 sh 'tar zxvf /sdk'
