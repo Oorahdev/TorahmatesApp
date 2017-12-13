@@ -19,6 +19,8 @@ pipeline {
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
 
+                sh 'export "ANDROID_HOME="/opt/android-sdk_r24.4.1-linux"'
+
                 sh 'chmod +x gradlew'
 
                 sh './gradlew tasks'
