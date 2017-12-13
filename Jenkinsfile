@@ -20,7 +20,7 @@ pipeline {
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
 
-                sh 'yes | sudo sdkmanager --licenses'
+                sh 'C:\Users\twender\AppData\Local\Android\Sdk\tools\bin\sdkmanager --licenses'
 
                 sh 'ls'
 
