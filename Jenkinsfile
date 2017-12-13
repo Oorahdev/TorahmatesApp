@@ -20,7 +20,7 @@ pipeline {
                 sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
-
+                sh 'cd C:\Users\twender\AppData\Local\Android\Sdk\tools\bin\sdkmanager.bat'
                 sh 'yes | sdkmanager --licenses'
 
                 sh 'ls'
