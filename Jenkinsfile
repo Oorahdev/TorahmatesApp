@@ -27,7 +27,6 @@ pipeline {
 
                 sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
-
                }
 			
 		}
