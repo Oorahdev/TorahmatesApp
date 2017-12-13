@@ -19,10 +19,8 @@ pipeline {
                 //install android sdk
                 sh 'cd /opt'
                 sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
-                sh 'rm -rf sdk-tools-linux-3859397.zip.*'
                 sh 'ls'
                 //sh 'tar zxvf sdk-tools-linux-3859397.zip'
-                sh 'rm sdk-tools-linux-3859397.zip'
                 //sh 'export ANDROID_HOME="/sdk/"'
                 //sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
 
