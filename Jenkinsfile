@@ -15,6 +15,7 @@ pipeline {
                      //                     url: 'https://github.com/Oorahdev/TorahMatesApp-FCM_XMPP_Server']
                 //build tmapp apk from github
                 sh 'cd /opt'
+                sh 'pwd'
                 sh 'ls'
                 sh 'rm android-sdk_r24.4.1-linux.*'
                 sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
