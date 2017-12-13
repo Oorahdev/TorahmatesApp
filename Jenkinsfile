@@ -19,8 +19,9 @@ pipeline {
                 //install android sdk
                 sh 'wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip'
                 sh 'ls'
-                sh 'tar zxvf /opt/android-sdk'
-                sh 'export ANDROID_HOME="/opt/android-sdk-linux"'
+                sh 'mkdir /sdk/'
+                sh 'tar zxvf /sdk/'
+                sh 'export ANDROID_HOME="/sdk/"'
                 sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
 
                 sh 'android update sdk --no-ui'
