@@ -18,7 +18,8 @@ pipeline {
                 sh 'chmod -R 777 *'
                 //install android sdk
                 sh 'cd /opt'
-                sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
+                //sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
+                sh 'rm android-sdk_r24.4.1-linux.*'
                 sh 'ls'
                 //sh 'tar zxvf sdk-tools-linux-3859397.zip'
                 //sh 'export ANDROID_HOME="/sdk/"'
