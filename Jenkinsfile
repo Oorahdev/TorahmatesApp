@@ -15,17 +15,10 @@ pipeline {
                      //                     url: 'https://github.com/Oorahdev/TorahMatesApp-FCM_XMPP_Server']
                 //build tmapp apk from github
                 sh 'chmod +x gradlew'
-                sh 'chmod -R 777 *'
-                //install android sdk
-                sh 'cd /opt'
-                sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
-                //sh 'ls'
-                sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
-                sh 'rm android-sdk_r24.4.1-linux.tgz'
-                //sh 'export ANDROID_HOME="/sdk/"'
-                //sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
+                sh 'export ANDROID_HOME="/opt/android-sdk-linux"'
+                sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
 
-                //sh 'android update sdk --no-ui'
+                sh 'android update sdk --no-ui'
 
                 //sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
