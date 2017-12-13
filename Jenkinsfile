@@ -16,6 +16,13 @@ pipeline {
                 //build tmapp apk from github
                 sh 'chmod +x gradlew'
                 sh 'chmod -R 777 *'
+                //install android sdk
+                sh 'wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip'
+                sh 'tar zxvf android-sdk-linux'
+                sh 'export ANDROID_HOME="/opt/android-sdk-linux"'
+                sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
+
+                sh 'android update sdk --no-ui'
 
                 sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
