@@ -18,9 +18,10 @@ pipeline {
                 sh 'chmod -R 777 *'
                 //install android sdk
                 sh 'rm -rf sdk-tools-linux-3859397.*'
+                sh 'cd /opt'
                 sh 'wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip'
                 sh 'ls'
-                sh 'tar zxvf /sdk'
+                sh 'tar zxvf sdk-tools-linux-3859397.zip'
                 sh 'export ANDROID_HOME="/sdk/"'
                 sh 'export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"'
 
