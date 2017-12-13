@@ -17,7 +17,7 @@ pipeline {
                 sh 'cd /opt'
                 sh 'pwd'
                 sh 'ls'
-                sh 'wget --no-verbose http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
+                sh 'wget --y http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
 
