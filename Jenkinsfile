@@ -16,6 +16,7 @@ pipeline {
                 //build tmapp apk from github
                 sh 'cd /opt'
                 sh 'ls'
+                sh 'rm android-sdk_r24.4.1-linux.*'
                 sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'ls'
