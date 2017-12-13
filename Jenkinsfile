@@ -21,7 +21,7 @@ pipeline {
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
 
-                sh 'tools/bin/sdkmanager --licenses'
+                sh 'yes | sdkmanager --licenses'
 
                 sh 'ls'
 
