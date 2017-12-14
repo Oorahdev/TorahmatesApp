@@ -21,8 +21,8 @@ pipeline {
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
                 sh 'sudo chmod -R 777 *'
                 sh 'cd android-sdk-linux/'
-                sh 'ls'
-                sh '(while sleep 3; do echo "y"; done) | "$ANDROID_HOME"/tools/android update sdk --no-ui'
+                sh 'ls android-sdk-linux/'
+                //sh '(while sleep 3; do echo "y"; done) | "$ANDROID_HOME"/tools/android update sdk --no-ui'
 
                 sh 'ls'
 
