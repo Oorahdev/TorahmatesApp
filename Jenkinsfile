@@ -24,7 +24,7 @@ pipeline {
                 //sh 'mkdir -p "ANDROID_HOME/licenses"'
                 //sh 'resync -avhP ./licenses/ "ANDROID_HOME/licenses/"'
                 sh 'echo $ANDROID_HOME'
-                sh '(while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/android update sdk --no-ui'
+                sh '(while sleep 3; do echo "y"; done) | '$ANDROID_HOME'/tools/android update sdk --no-ui'
 
                 sh 'ls'
 
