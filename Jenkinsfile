@@ -21,14 +21,14 @@ pipeline {
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
                 sh 'sudo chmod -R 777 *'
                 sh 'cd android-sdk-linux/'
-                sh 'ls android-sdk-linux/'
+                sh 'ls android-sdk-linux/tools/'
                 //sh '(while sleep 3; do echo "y"; done) | "$ANDROID_HOME"/tools/android update sdk --no-ui'
 
-                sh 'ls'
+                //sh 'ls'
 
                 sh 'chmod +x gradlew'
 
-                sh './gradlew tasks'
+                //sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
                }
 			
