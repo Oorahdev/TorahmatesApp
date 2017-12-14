@@ -23,6 +23,7 @@ pipeline {
                 //sh '$ANDROID_HOME/tools/bin/sdkmanager --licenses'
                 //sh 'mkdir -p "ANDROID_HOME/licenses"'
                 //sh 'resync -avhP ./licenses/ "ANDROID_HOME/licenses/"'
+                sh '(while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/android update sdk --no-ui'
 
                 sh 'ls'
 
