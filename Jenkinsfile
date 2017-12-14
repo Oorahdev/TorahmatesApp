@@ -23,13 +23,13 @@ pipeline {
                 sh 'cd android-sdk-linux/'
                 sh 'ls android-sdk-linux/tools/'
                 sh 'ls "$ANDROID_HOME"'
-                sh '(while sleep 3; do echo "y"; done) | "$ANDROID_HOME"/tools/android update sdk --no-ui'
+                //sh '(while sleep 3; do echo "y"; done) | "$ANDROID_HOME"/tools/android update sdk --no-ui'
 
                 //sh 'ls'
 
                 sh 'chmod +x gradlew'
 
-                //sh './gradlew tasks'
+                sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
                }
 			
