@@ -16,13 +16,13 @@ pipeline {
                 //build tmapp apk from github
                 sh 'pwd'
                 sh 'ls'
-                sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
+                sh 'wget -y http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
                 sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
                 sh 'rm android-sdk_r24.4.1-linux.tgz'
                 sh 'sudo chmod -R 777 *'
                 //sh '$ANDROID_HOME/tools/bin/sdkmanager --licenses'
-                sh 'mkdir -p "ANDROID_HOME/licenses"'
-                sh 'resync -avhP ./licenses/ "ANDROID_HOME/licenses/"'
+                //sh 'mkdir -p "ANDROID_HOME/licenses"'
+                //sh 'resync -avhP ./licenses/ "ANDROID_HOME/licenses/"'
 
                 sh 'ls'
 
