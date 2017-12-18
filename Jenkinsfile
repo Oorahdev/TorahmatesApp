@@ -26,7 +26,7 @@ pipeline {
 
                 sh 'chmod +x gradlew'
 
-                //sh './gradlew tasks'
+                sh './gradlew tasks'
                 //sh './gradlew assembleRelease'
                }
 			
