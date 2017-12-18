@@ -38,6 +38,8 @@ pipeline {
 
 		    steps{
 		        sh 'ls app/'
+		        //zipalign apk
+		        sh '$ zipalign -f -v 4 app/*.apk app-release.apk'
 
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
@@ -45,7 +47,7 @@ pipeline {
                 //upload app to google play
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
                     trackName: 'beta'
-                    
+
                }
 		}
 
