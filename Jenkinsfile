@@ -39,7 +39,7 @@ pipeline {
 		    steps{
 		        sh 'ls app/'
 		        //zipalign apk
-		        sh '$ zipalign -f -v 4 app/*.apk app-release.apk'
+		        //sh '$ zipalign -f -v 4 app/*.apk app-release.apk'
 
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
