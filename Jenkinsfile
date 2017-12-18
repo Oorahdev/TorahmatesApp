@@ -22,19 +22,18 @@ pipeline {
                 sh 'sudo chmod -R 777 *'
                 sh 'ls "$ANDROID_HOME"/tools/bin'
                 sh 'echo "y" |"$ANDROID_HOME"/tools/bin/sdkmanager --update'
-                //sh '(while sleep 3; do echo "y"; done) | "$ANDROID_HOME"/tools/android update sdk --no-ui'
 
                 sh 'chmod +x gradlew'
 
                 sh './gradlew tasks'
-                //sh './gradlew assembleRelease'
+                sh './gradlew assembleRelease'
                }
 			
 		}
 
 
 
-/*
+
 		stage('Deploy') {
 
 		    steps{
@@ -46,7 +45,7 @@ pipeline {
                     trackName: 'beta'
                }
 		}
-		*/
+		
 		
 	}
 }
