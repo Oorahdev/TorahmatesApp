@@ -38,14 +38,14 @@ pipeline {
 
 		    steps{
 		        sh 'ls app/'
-		        /*
+
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey'])
                 //upload app to google play
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
                     trackName: 'beta'
-                    */
+                    
                }
 		}
 
