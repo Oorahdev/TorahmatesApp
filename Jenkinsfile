@@ -45,8 +45,8 @@ pipeline {
                 //upload app to google play
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
                     trackName: 'beta'
+                    */
                }
-               */
 		}
 
 		
