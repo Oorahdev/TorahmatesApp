@@ -37,6 +37,8 @@ pipeline {
 		stage('Deploy') {
 
 		    steps{
+		        sh 'ls'
+		        /*
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey'])
@@ -44,8 +46,9 @@ pipeline {
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
                     trackName: 'beta'
                }
+               */
 		}
-		
+
 		
 	}
 }
