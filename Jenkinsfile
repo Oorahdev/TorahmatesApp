@@ -37,7 +37,7 @@ pipeline {
 		stage('Deploy') {
 
 		    steps{
-		        sh 'ls'
+		        sh 'ls app/'
 		        /*
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
