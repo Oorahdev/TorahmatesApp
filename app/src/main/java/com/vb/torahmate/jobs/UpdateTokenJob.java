@@ -62,7 +62,7 @@ public class UpdateTokenJob extends Job {
         private void getData() throws JSONException {
             HttpRequest request = HttpRequest.post(AppURL.urlUpdateToken);
             Map<String, String> headers = ImmutableMap.of(
-                    Constants.HEADER, "cd1075d848a5e0142bd3b5d66726041c",
+                    Constants.HEADER, SPAccountsManager.getToken(AppManager.getAppContext()),
                     Constants.RegistrationToken, mToken
             );
             request.headers(headers);
