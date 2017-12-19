@@ -39,7 +39,7 @@ pipeline {
 		stage('Deploy') {
 
 		    steps{
-		        sh 'ls app/'
+		        sh 'ls "$ANDROID_HOME"/tools/'
 		        //zipalign apk
 		        //sh '$ zipalign -f -v 4 app/*.apk app-release.apk'
 
