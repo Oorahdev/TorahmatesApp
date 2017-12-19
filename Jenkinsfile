@@ -42,7 +42,7 @@ pipeline {
 		        sh 'ls "/var/lib/jenkins/workspace/TorahMates App/android-sdk-linux/build-tools/25.0.0"'
 		        //zipalign apk
 		        //sh '$ zipalign -f -v 4 app/*.apk app-release.apk'
-		        sh '$./zipalign -v 4 app/*.apk app-release.apk'
+		        sh '"$ANDROID_HOME"/build-tools/25.0.0/zipalign -v 4 app/*.apk app-release.apk'
 
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
