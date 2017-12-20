@@ -16,13 +16,13 @@ pipeline {
                 sh 'ls'
                 sh 'sudo chmod -R 777 *'
                 sh 'ls "$ANDROID_HOME"/tools/bin'
-                sh 'echo "y" |"$ANDROID_HOME"/tools/bin/sdkmanager --update'
+                //sh 'echo "y" |"$ANDROID_HOME"/tools/bin/sdkmanager --update'
 
                 sh 'chmod +x gradlew'
                 sh 'ls app/'
                 //sh './gradlew -P versCode=$BUILD_NUMBER clean'
                 //sh 'echo -PversCode'
-                sh './gradlew assembleRelease'
+                sh './gradlew assemble'
                 sh 'ls app/'
                }
 			
@@ -30,7 +30,7 @@ pipeline {
 
 
 
-
+/*
 		stage('Deploy') {
 
 		    steps{
@@ -48,6 +48,7 @@ pipeline {
 
                }
 		}
+		*/
 
 		
 	}
