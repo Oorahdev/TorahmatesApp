@@ -26,6 +26,7 @@ pipeline {
                 sh './gradlew clean'
                 sh './gradlew assembleRelease'
                 sh 'ls app/'
+
                }
 			
 		}
@@ -39,6 +40,7 @@ pipeline {
 		        //sh 'ls "/var/lib/jenkins/workspace/TorahMates App/android-sdk-linux/build-tools/25.0.0"'
 		        //sh 'rm app/app-release-*.apk'
 		        sh 'ls app/'
+		        sh 'ls "$ANDROID_HOME/keystore/"'
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
