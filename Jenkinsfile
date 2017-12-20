@@ -25,7 +25,7 @@ pipeline {
 
                 //sh './gradlew tasks'
                 sh 'ls app/'
-                sh './gradlew -PversionCode=$BUILD_NUMBER'
+                sh './gradlew -PversionCode=$BUILD_NUMBER build'
                 sh './gradlew assembleRelease'
                 sh 'ls app/'
                }
