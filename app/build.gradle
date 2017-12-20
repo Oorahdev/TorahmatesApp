@@ -36,6 +36,8 @@ android {
     }
     signingConfigs {
         config {
+            storeFile file("tmapp.jks")
+            storePassword "421kirby#"
             keyAlias "tmappkey"
             keyPassword "421kirby#"
         }
