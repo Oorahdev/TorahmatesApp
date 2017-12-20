@@ -14,9 +14,9 @@ pipeline {
                 //build tmapp apk from github
 
                 sh 'ls'
-                sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
-                sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
-                sh 'rm android-sdk_r24.4.1-linux.tgz'
+                //sh 'wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz'
+                //sh 'tar zxvf android-sdk_r24.4.1-linux.tgz'
+                //sh 'rm android-sdk_r24.4.1-linux.tgz'
                 sh 'sudo chmod -R 777 *'
                 sh 'ls "$ANDROID_HOME"/tools/bin'
                 sh 'echo "y" |"$ANDROID_HOME"/tools/bin/sdkmanager --update'
