@@ -23,7 +23,8 @@ pipeline {
                 //sh './gradlew -P versCode=$BUILD_NUMBER clean'
                 //sh 'echo -PversCode'
                 sh './gradlew tasks'
-                sh './gradlew assemble'
+                sh './gradlew clean'
+                sh './gradlew assembleRelease'
                 sh 'ls app/'
                }
 			
