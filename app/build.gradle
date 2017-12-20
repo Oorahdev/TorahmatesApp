@@ -34,21 +34,21 @@ android {
         //versionCode "$buildNumber" as Integer
 
     }
-//    signingConfigs {
-//        config {
-//            storeFile file("tmapp.jks")
-//            storePassword "421kirby#"
-//            keyAlias "tmappkey"
-//            keyPassword "421kirby#"
-//        }
-//    }
+    signingConfigs {
+        release {
+            storeFile file("tmapp.jks")
+            storePassword "421kirby#"
+            keyAlias "tmappkey"
+            keyPassword "421kirby#"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             zipAlignEnabled true
             //resValue "string", "app_name", "TorahmatesApp " + (System.getenv("BUILD_NUMBER") ?: "IDE")
-//            signingConfig signingConfigs.config
+            signingConfig signingConfigs.release
         }
     }
 }
