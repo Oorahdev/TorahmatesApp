@@ -14,7 +14,7 @@ apply plugin: 'io.fabric'
 android {
     compileSdkVersion 21
     buildToolsVersion "25.0.0"
-    def jenkinsBuild = System.getenv("BUILD_NUMBER") ?: "10"
+    def jenkinsBuild = System.getenv("BUILD_NUMBER") ?: "22"
 
 
     defaultConfig {
