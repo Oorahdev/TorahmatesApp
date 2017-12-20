@@ -25,8 +25,8 @@ pipeline {
 
                 //sh './gradlew tasks'
                 sh 'ls app/'
-                sh './gradlew -P versCode=System.getenv("BUILD_NUMBER") clean'
-                sh 'echo ./gradlew -PversCode'
+                sh './gradlew -P versCode=$BUILD_NUMBER clean'
+                sh 'echo -PversCode'
                 sh './gradlew assembleRelease'
                 sh 'ls app/'
                }
