@@ -30,7 +30,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             zipAlignEnabled true
-            resValue "string", "app_name", "TorahmatesApp " + (System.getenv("BUILD_NUMBER") ?: "IDE")
+            //resValue "string", "app_name", "TorahmatesApp " + (System.getenv("BUILD_NUMBER") ?: "IDE")
         }
     }
 }
