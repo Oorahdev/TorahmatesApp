@@ -41,10 +41,11 @@ pipeline {
 		        //zipalign apk
 		        //sh '$ zipalign -f -v 4 app/*.apk app-release.apk'
 		        //sh '"$ANDROID_HOME"/build-tools/25.0.0/zipalign -v 4 app/*.apk app-release.apk'
-
+                sh 'rm app/app-release-*.apk'
                 //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
+
                 sh 'ls app'
                 //upload app to google play
                 androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
