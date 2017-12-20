@@ -23,7 +23,7 @@ pipeline {
 
                 sh 'chmod +x gradlew'
 
-                sh './gradlew tasks'
+                //sh './gradlew tasks'
                 sh 'ls app/'
                 sh './gradlew assembleRelease'
                 sh 'ls app/'
@@ -48,7 +48,7 @@ pipeline {
 
                 sh 'ls app'
                 //upload app to google play
-                androidApkUpload apkFilesPattern: '/app/app-release.apk', googleCredentialsId: 'Google Play Credentials',
+                androidApkUpload apkFilesPattern: '/app/app-release-signed.apk', googleCredentialsId: 'Google Play Credentials',
                     trackName: 'beta'
 
                }
