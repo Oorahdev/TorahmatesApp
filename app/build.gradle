@@ -19,7 +19,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 21
         //versionCode 21
-        versionCode System.getenv("BUILD_NUMBER").toInteger() //as Integer ?:0
+        //versionCode System.getenv("BUILD_NUMBER") //as Integer ?:0
         versionName "1.2"
 //        versionName 1.3
 //            project.ext.set("archivesBaseName", "TorahmatesApp-" + versionName + "-" + versionCode);
