@@ -20,6 +20,7 @@ pipeline {
 
                 sh 'chmod +x gradlew'
                 sh 'ls app/'
+                sh 'rm app/app-release.apk'
                 //sh './gradlew -P versCode=$BUILD_NUMBER clean'
                 //sh 'echo -PversCode'
                 sh './gradlew assembleRelease'
