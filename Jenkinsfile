@@ -41,7 +41,7 @@ pipeline {
 		        sh 'ls app/'
 		        sh 'ls "$ANDROID_HOME/keystore/"'
                 //sign android apk
-                step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
+                step([$class: 'SignApksBuilder', apksToSign: '**/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
                 sh 'ls app'
