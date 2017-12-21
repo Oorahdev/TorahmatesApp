@@ -24,7 +24,7 @@ pipeline {
                 //sh 'echo -PversCode'
                 sh './gradlew tasks'
                 sh './gradlew clean assembleRelease'
-                sh 'ls app/'
+                sh 'ls'
 
                }
 			
