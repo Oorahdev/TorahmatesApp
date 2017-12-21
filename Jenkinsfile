@@ -46,7 +46,7 @@ pipeline {
 
                 sh 'ls app'
                 //upload app to google play
-                androidApkUpload apkFilesPattern: 'app/*-release-signed.apk', googleCredentialsId: 'TorahmatesApp',
+                androidApkUpload apkFilesPattern: '**/*-signed.apk', googleCredentialsId: 'TorahmatesApp',
                     trackName: 'beta'
 
                }
