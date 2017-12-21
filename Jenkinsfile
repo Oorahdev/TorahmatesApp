@@ -41,12 +41,12 @@ pipeline {
 		        sh 'ls app/'
 		        //sh 'ls "$ANDROID_HOME/keystore/"'
                 //sign android apk
-                step([$class: 'SignApksBuilder', apksToSign: '**/*.apk', archiveUnsignedApks: true,
+                step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
                 sh 'ls app'
                 //upload app to google play
-                androidApkUpload apkFilesPattern: '**/*-signed.apk', googleCredentialsId: 'TorahmatesApp',
+                androidApkUpload apkFilesPattern: 'app/build/outputs/apk/*-signed.apk', googleCredentialsId: 'TorahmatesApp',
                     trackName: 'beta'
 
                }
