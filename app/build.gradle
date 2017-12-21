@@ -36,10 +36,10 @@ android {
     }
     signingConfigs {
         release {
-//            storeFile file("tmapp.jks")
-//            storePassword "421kirby#"
-//            keyAlias "tmappkey"
-//            keyPassword "421kirby#"
+            storeFile file("tmapp.jks")
+            storePassword "421kirby#"
+            keyAlias "tmappkey"
+            keyPassword "421kirby#"
         }
     }
     buildTypes {
