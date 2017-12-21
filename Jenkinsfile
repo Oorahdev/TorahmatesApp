@@ -16,12 +16,8 @@ pipeline {
                 sh 'ls'
                 sh 'sudo chmod -R 777 *'
                 sh 'ls "$ANDROID_HOME"/tools/bin'
-                //sh 'echo "y" |"$ANDROID_HOME"/tools/bin/sdkmanager --update'
-
                 sh 'chmod +x gradlew'
                 sh 'ls app/'
-                //sh './gradlew -P versCode=$BUILD_NUMBER clean'
-                //sh 'echo -PversCode'
                 sh './gradlew tasks'
                 sh './gradlew clean assembleRelease'
                 sh 'ls'
@@ -36,12 +32,10 @@ pipeline {
 		stage('Deploy') {
 
 		    steps{
-		        //sh 'ls "/var/lib/jenkins/workspace/TorahMates App/android-sdk-linux/build-tools/25.0.0"'
-		        //sh 'rm app/app-release-*.apk'
+		        sh 'rm app-release-*.apk'
 		        sh 'ls app/'
-		        //sh 'ls "$ANDROID_HOME/keystore/"'
-                //sign android apk
-                step([$class: 'SignApksBuilder', apksToSign: 'app/*.apk', archiveUnsignedApks: true,
+		        //sign android apk
+                step([$class: 'SignApksBuilder', apksToSign: '*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
                 sh 'ls app'
