@@ -40,8 +40,10 @@ pipeline {
 
                 sh 'ls app'
                 //upload app to google play
-                androidApkUpload apkFilesPattern: 'app-release-signed.apk', googleCredentialsId: 'tmappkey',
-                    trackName: 'beta'
+                //androidApkUpload apkFilesPattern: 'app-release-signed.apk', googleCredentialsId: 'tmappkey',
+                //    trackName: 'beta'
+                androidApkUpload apkFilesPattern: 'app-release-signed.apk',
+                    googleCredentialsId: 'Google Play Credentials', trackName: 'beta'
 
                }
 		}
