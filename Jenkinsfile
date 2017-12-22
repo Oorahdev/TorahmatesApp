@@ -15,10 +15,10 @@ pipeline {
 
                 sh 'ls'
                 sh 'sudo chmod -R 777 *'
-                sh 'ls "$ANDROID_HOME"/tools/bin'
                 sh 'chmod +x gradlew'
-                sh 'ls app/'
-                sh './gradlew tasks'
+                sh 'ls'
+                sh 'rm app-release.apk'
+                sh 'ls'
                 sh './gradlew clean assembleRelease'
                 sh 'ls'
 
@@ -33,12 +33,12 @@ pipeline {
 
 		    steps{
 		        sh 'rm app-release-*.apk'
-		        sh 'ls app/'
+		        sh 'ls'
 		        //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: '*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
-                sh 'ls app'
+                sh 'ls'
                 //upload app to google play
                 androidApkUpload apkFilesPattern: 'app-release-signed.apk',
                     googleCredentialsId: 'Google Play Credentials', trackName: 'beta'
