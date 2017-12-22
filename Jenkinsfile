@@ -21,6 +21,7 @@ pipeline {
                 sh 'ls'
                 sh './gradlew clean assembleRelease'
                 sh 'ls'
+                sh 'ls app'
 
                }
 			
