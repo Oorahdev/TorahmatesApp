@@ -17,7 +17,7 @@ pipeline {
                 sh 'sudo chmod -R 777 *'
                 sh 'chmod +x gradlew'
                 sh 'ls'
-                sh 'rm app-release.apk'
+                //sh 'rm app-release.apk'
                 sh 'ls'
                 sh './gradlew clean assembleRelease'
                 sh 'ls'
@@ -33,7 +33,7 @@ pipeline {
 		stage('Deploy') {
 
 		    steps{
-		        sh 'rm app-release-*.apk'
+		        //sh 'rm app-release-*.apk'
 		        sh 'ls'
 		        //sign android apk
                 step([$class: 'SignApksBuilder', apksToSign: '*.apk', archiveUnsignedApks: true,
