@@ -49,7 +49,7 @@ pipeline {
 		        //sh 'rm app-release-*.apk'
 		        sh 'ls'
 		        //sign android apk
-                step([$class: 'SignApksBuilder', apksToSign: '**/*.apk', archiveUnsignedApks: true,
+                step([$class: 'SignApksBuilder', apksToSign: '*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
                 sh 'ls'
