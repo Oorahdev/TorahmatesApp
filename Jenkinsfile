@@ -19,7 +19,7 @@ pipeline {
                 sh 'ls'
                 //sh 'rm app-release*.apk'
                 sh 'ls'
-                sh './gradlew clean assembleRelease'
+                //sh './gradlew clean assembleRelease'
                 sh 'ls'
                 sh 'ls app'
 
@@ -27,7 +27,7 @@ pipeline {
 			
 		}
 
-/*
+
 		stage('Build') {
 		    steps {
 		        gradle {
@@ -37,7 +37,7 @@ pipeline {
 		    }
 		}
 
-		*/
+		
 
 
 
