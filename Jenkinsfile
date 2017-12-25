@@ -16,7 +16,7 @@ pipeline {
                 sh 'ls'
                 sh 'sudo chmod -R 777 *'
                 sh 'chmod +x gradlew'
-                sh 'ls'
+                sh 'ls app'
                 //sh 'rm app-release*.apk'
                 sh 'ls'
                 gradle {
