@@ -26,7 +26,8 @@ pipeline {
 
 		stage('Build') {
 		    steps {
-		        sh './gradlew locate'
+		        sh './gradlew tasks'
+		        //sh './gradlew locate'
 		        sh 'ls'
                 sh './gradlew clean assembleRelease'
                 sh 'ls'
