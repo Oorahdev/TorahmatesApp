@@ -34,10 +34,7 @@ pipeline {
                 sh 'ls'
                 sh 'ls app'
 
-		        gradle {
-		            useWrapper true
-		            tasks 'clean assembleRelease'
-		        }
+
 		    }
 		}
 
