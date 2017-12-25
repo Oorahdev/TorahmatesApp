@@ -29,8 +29,8 @@ pipeline {
 		        //sh './gradlew tasks'
 		        sh './gradlew wrapper --gradle-version=3.3 --distribution-type=bin'
 		        //sh './gradlew locate'
-		        sh 'ls'
-                sh './gradlew clean assembleRelease'
+		        sh 'ls app/build/outputs/apk'
+                //sh './gradlew clean assembleRelease'
                 sh 'ls'
                 sh 'ls app'
 
@@ -45,7 +45,7 @@ pipeline {
 
 
 
-
+/*
 		stage('Deploy') {
 
 		    steps{
@@ -62,6 +62,7 @@ pipeline {
 
                }
 		}
+		*/
 
 
 		
