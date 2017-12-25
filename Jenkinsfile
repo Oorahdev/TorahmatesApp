@@ -30,8 +30,8 @@ pipeline {
 		        //sh './gradlew locate'
 		        sh 'ls app/build/outputs/apk'
 		        sh 'rm app/build/outputs/apk/app-*.apk'
-                //sh './gradlew clean assembleRelease'
-                sh 'ls'
+                sh './gradlew clean assembleRelease'
+                sh 'ls app/build/outputs/apk'
                 sh 'ls app'
 
 
@@ -59,7 +59,7 @@ pipeline {
 
                }
 		}
-		
+
 
 
 		
