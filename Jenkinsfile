@@ -17,7 +17,6 @@ pipeline {
                 sh 'sudo chmod -R 777 *'
                 sh 'chmod +x gradlew'
                 sh 'ls app'
-                //sh 'rm app-release*.apk'
 
                }
 			
@@ -30,6 +29,7 @@ pipeline {
 		        sh './gradlew wrapper --gradle-version=3.3 --distribution-type=bin'
 		        //sh './gradlew locate'
 		        sh 'ls app/build/outputs/apk'
+		        sh 'rm app/build/outputs/apk/app-*.apk'
                 //sh './gradlew clean assembleRelease'
                 sh 'ls'
                 sh 'ls app'
@@ -49,7 +49,7 @@ pipeline {
 		        //sh 'rm app-release-*.apk'
 		        sh 'ls'
 		        //sign android apk
-                step([$class: 'SignApksBuilder', apksToSign: '*.apk', archiveUnsignedApks: true,
+                step([$class: 'SignApksBuilder', apksToSign: 'app/build/outputs/apk/app-*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
                 sh 'ls'
