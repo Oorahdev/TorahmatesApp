@@ -17,7 +17,6 @@ pipeline {
                 sh 'sudo chmod -R 777 *'
                 sh 'chmod +x gradlew'
                 sh 'ls app'
-                sh 'ls Users'
                 //sh 'rm app-release*.apk'
                 sh 'ls'
                 //gradle {
