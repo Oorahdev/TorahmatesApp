@@ -29,12 +29,12 @@ pipeline {
 
 
 		stage('Build') {
-		    //steps {
+		    steps {
 		        gradle {
 		            useWrapper true
 		            tasks 'clean assembleRelease'
 		        }
-		    //}
+		    }
 		}
 
 
