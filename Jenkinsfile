@@ -26,7 +26,8 @@ pipeline {
 
 		stage('Build') {
 		    steps {
-		        sh './gradlew tasks'
+		        //sh './gradlew tasks'
+		        sh '$ ./gradlew wrapper --gradle-version=3.3 --distribution-type=bin'
 		        //sh './gradlew locate'
 		        sh 'ls'
                 sh './gradlew clean assembleRelease'
