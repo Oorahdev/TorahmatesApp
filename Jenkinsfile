@@ -18,22 +18,19 @@ pipeline {
                 sh 'chmod +x gradlew'
                 sh 'ls app'
                 //sh 'rm app-release*.apk'
-                sh 'ls'
-                gradle {
-                    useWrapper true
-                    tasks 'clean assembleRelease'
-                }
-                //sh './gradlew clean assembleRelease'
-                sh 'ls'
-                sh 'ls app'
 
                }
 			
 		}
 
-/*
+
 		stage('Build') {
 		    steps {
+		        sh 'ls'
+                sh './gradlew clean assembleRelease'
+                sh 'ls'
+                sh 'ls app'
+
 		        gradle {
 		            useWrapper true
 		            tasks 'clean assembleRelease'
@@ -41,7 +38,7 @@ pipeline {
 		    }
 		}
 
-*/
+
 
 
 
