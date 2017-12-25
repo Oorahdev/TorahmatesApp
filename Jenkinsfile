@@ -5,7 +5,7 @@ pipeline {
     agent any
 	
 	stages {
-		stage('Build') {
+		stage('Checkout') {
 		    steps{
                 //pull tmapp and server from github
                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false,
@@ -19,12 +19,21 @@ pipeline {
                 sh 'ls'
                 //sh 'rm app-release*.apk'
                 sh 'ls'
-                sh './gradlew clean assembleRelease'
+                //sh './gradlew clean assembleRelease'
                 sh 'ls'
                 sh 'ls app'
 
                }
 			
+		}
+
+		stage('Build') {
+		    steps {
+		        gradle {
+		            useWrapper true
+		            tasks 'clean assembleRelease'
+		        }
+		    }
 		}
 
 
