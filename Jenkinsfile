@@ -24,7 +24,7 @@ pipeline {
                 //    tasks 'clean assembleRelease'
                 //}
                 //sh './gradlew clean assembleRelease'
-                sh 'gradle -version'
+                sh 'gradle -v'
                 sh 'ls'
                 sh 'ls app'
 
