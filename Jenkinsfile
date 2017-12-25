@@ -5,7 +5,7 @@ pipeline {
     agent any
 	
 	stages {
-		stage('Checkout') {
+		stage('SCM') {
 		    steps{
                 //pull tmapp and server from github
                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false,
@@ -29,15 +29,15 @@ pipeline {
 
 
 		stage('Build') {
-		    steps {
+		    //steps {
 		        gradle {
 		            useWrapper true
 		            tasks 'clean assembleRelease'
 		        }
-		    }
+		    //}
 		}
 
-		
+
 
 
 
