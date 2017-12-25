@@ -52,7 +52,7 @@ pipeline {
                 step([$class: 'SignApksBuilder', apksToSign: 'app/build/outputs/apk/app-*.apk', archiveUnsignedApks: true,
                         keyAlias: 'tmappkey', keyStoreId: 'tmappkey', skipZipalign: true])
 
-                sh 'ls'
+                sh 'ls app/build/outputs/apk'
                 //upload app to google play
                 androidApkUpload apkFilesPattern: 'app/build/outputs/apk/app-release-signed.apk',
                     googleCredentialsId: 'Google Play Credentials', trackName: 'beta'
