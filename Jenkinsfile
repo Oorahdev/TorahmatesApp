@@ -19,11 +19,11 @@ pipeline {
                 sh 'ls app'
                 //sh 'rm app-release*.apk'
                 sh 'ls'
-                //gradle {
-                //    useWrapper true
-                //    tasks 'clean assembleRelease'
-                //}
-                sh './gradlew clean assembleRelease'
+                gradle {
+                    useWrapper true
+                    tasks 'clean assembleRelease'
+                }
+                //sh './gradlew clean assembleRelease'
                 sh 'ls'
                 sh 'ls app'
 
