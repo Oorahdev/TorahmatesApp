@@ -29,7 +29,7 @@ pipeline {
 		        sh './gradlew wrapper --gradle-version=3.3 --distribution-type=bin'
 		        //sh './gradlew locate'
 		        sh 'ls app/build/outputs/apk'
-		        sh 'rm app/build/outputs/apk/app-*.apk'
+		        //sh 'rm app/build/outputs/apk/app-*.apk'
                 sh './gradlew clean assembleRelease'
                 sh 'ls app/build/outputs/apk'
                 sh 'ls app'
