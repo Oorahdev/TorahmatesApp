@@ -54,7 +54,7 @@ pipeline {
 
                 sh 'ls app/build/outputs/apk'
                 //upload app to google play
-                androidApkUpload apkFilesPattern: 'app/build/outputs/apk/app-release-signed.apk',
+                androidApkUpload apkFilesPattern: 'app/build/outputs/apk/app-release.apk',
                     googleCredentialsId: 'Google Play Credentials', trackName: 'beta'
 
                }
