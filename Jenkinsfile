@@ -23,8 +23,7 @@ pipeline {
                 //    useWrapper true
                 //    tasks 'clean assembleRelease'
                 //}
-                //sh './gradlew clean assembleRelease'
-                sh './gradlew -v'
+                sh './gradlew clean assembleRelease'
                 sh 'ls'
                 sh 'ls app'
 
