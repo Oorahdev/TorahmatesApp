@@ -17,7 +17,7 @@ pipeline {
                 sh 'sudo chmod -R 777 *'
                 sh 'chmod +x gradlew'
                 sh 'ls'
-                sh 'rm app-release*.apk'
+                //sh 'rm app-release*.apk'
                 sh 'ls'
                 sh './gradlew clean assembleRelease'
                 sh 'ls'
