@@ -33,6 +33,13 @@
         <meta-data
             android:name="AA_DB_VERSION"
             android:value="8" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.vb.torahmate.models.CallMyTorahmateInfoModel,
+                com.vb.torahmate.models.ContactTorahmateModel, com.vb.torahmate.models.GetTorahmatesModel,
+                com.vb.torahmate.models.LoginInfoModel, com.vb.torahmate.models.MileageLogModel,
+                com.vb.torahmate.models.MilesReportLearningModel, com.vb.torahmate.models.NavDrawerItemModel,
+                com.vb.torahmate.models.TmInfoModel, com.vb.torahmate.models.UpdateTokenModel" />
 
         <activity
             android:name=".main.MainActivity"

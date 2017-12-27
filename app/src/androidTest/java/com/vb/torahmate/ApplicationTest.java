@@ -1,4 +1,5 @@
-package torahmate.vb.com.torahmate;
+//package torahmate.vb.com.torahmate;
+package com.vb.torahmate;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
