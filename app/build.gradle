@@ -23,6 +23,7 @@ android {
         targetSdkVersion 21
         versionCode jenkinsBuild.toInteger()
         versionName "1.2"
+        //multiDexEnabled true
     }
 
     buildTypes {
@@ -47,6 +48,8 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/activeandroid-3.0.jar')
     //compile files ('libs/activeandroid-3.1-beta.jar')
+
+    //compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true;
     }
@@ -54,9 +57,10 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.firebase:firebase-jobdispatcher:0.6.0'
     compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.0.+'
+    //compile 'com.android.support:recyclerview-v7:22.0.+'
     //compile 'com.android.support:appcompat-v7:21.0.0'
-    //compile 'com.android.support:recyclerview-v7:21.0.0'
+
+    compile 'com.android.support:recyclerview-v7:21.0.0'
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.path:android-priority-jobqueue:1.1.2'
     compile 'de.greenrobot:eventbus:2.4.0'
@@ -76,6 +80,7 @@ dependencies {
     compile 'com.appsee:appsee-android:+'
     compile 'com.google.android.gms:play-services-analytics:10.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //compile 'com.android.support:multidex:1.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -3,6 +3,8 @@ package com.vb.torahmate.utils;
 
 import android.app.Application;
 import android.content.Context;
+//import android.support.multidex.MultiDex;
+//import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.activeandroid.ActiveAndroid;
@@ -26,6 +28,12 @@ public class AppManager extends Application {
     public static EventBus eventBus;
     public static Gson gson;
     private static Tracker mTracker;
+
+//    @Override
+//    protected void attachBaseContext(Context base) {
+//        super.attachBaseContext(base);
+//        MultiDex.install(this);
+//    }
 
     public static AppManager getInstance() {
         return sInstance;
