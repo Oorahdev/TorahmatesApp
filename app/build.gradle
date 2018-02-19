@@ -12,7 +12,7 @@ apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "25.0.0"
+    buildToolsVersion '25.0.0'
     def jenkinsBuild = System.getenv("BUILD_NUMBER") ?: "23"
 
 
@@ -56,9 +56,9 @@ dependencies {
     compile 'com.google.firebase:firebase-core:10.0.1'
     compile 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.firebase:firebase-jobdispatcher:0.6.0'
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    //compile 'com.android.support:appcompat-v7:22.2.0'
     //compile 'com.android.support:recyclerview-v7:22.0.+'
-    //compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
 
     compile 'com.android.support:recyclerview-v7:21.0.0'
     compile 'com.android.support:support-v4:21.0.3'
@@ -80,6 +80,7 @@ dependencies {
     compile 'com.appsee:appsee-android:+'
     compile 'com.google.android.gms:play-services-analytics:10.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-compat:21.0.0'
     //compile 'com.android.support:multidex:1.0.0'
 }
 

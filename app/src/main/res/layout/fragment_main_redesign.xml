@@ -1,0 +1,73 @@
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/message_bar"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="left|top"
+                android:background="@drawable/login_btn_bg"
+                android:gravity="center"
+                android:text="@string/connection_msg"
+                android:textColor="@color/white"
+                android:visibility="invisible" />
+
+
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/message_bar"
+                android:visibility="visible">
+            </FrameLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@color/back_layout"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:name="com.vb.torahmate.main.NavigationDrawerFragment"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer"/>
+</android.support.v4.widget.DrawerLayout>
