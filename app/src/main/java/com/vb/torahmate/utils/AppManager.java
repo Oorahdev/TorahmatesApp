@@ -8,8 +8,6 @@ import android.content.Context;
 import android.util.Log;
 
 import com.activeandroid.ActiveAndroid;
-import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.CrashlyticsCore;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import com.google.gson.Gson;
@@ -20,7 +18,6 @@ import com.vb.torahmate.BuildConfig;
 import com.vb.torahmate.R;
 
 import de.greenrobot.event.EventBus;
-import io.fabric.sdk.android.Fabric;
 public class AppManager extends Application {
 
     public static AppManager sInstance;
@@ -47,8 +44,7 @@ public class AppManager extends Application {
     public void onCreate() {
         super.onCreate();
         // Start Crashlytics, disable when in debug mode
-        CrashlyticsCore core = new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build();
-        Fabric.with(this, new Crashlytics.Builder().core(core).build());
+
         sInstance = this;
         configureJobManager();
         configEventBus();

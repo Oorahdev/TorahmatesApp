@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -24,7 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Delete;
-import com.appsee.Appsee;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.path.android.jobqueue.JobManager;
@@ -73,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Util.googleTracking(Constants.ACTIVITY_CAT, this.getClass().getSimpleName());
-        Appsee.start(Constants.APPSEE_KEY);
+//        Appsee.start(Constants.APPSEE_KEY);
         s_intentFilter.addAction(Intent.ACTION_TIME_TICK);
         s_intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
         s_intentFilter.addAction(Intent.ACTION_TIME_CHANGED);

@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.internal.telephony.ITelephony;
-import com.appsee.Appsee;
 import com.vb.torahmate.R;
 import com.vb.torahmate.utils.AppManager;
 import com.vb.torahmate.utils.Constants;
@@ -38,7 +37,7 @@ public class CustomCallingScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custom_calling_screen);
         Util.googleTracking(Constants.ACTIVITY_CAT, this.getClass().getSimpleName());
-        Appsee.start(Constants.APPSEE_KEY);
+       // Appsee.start(Constants.APPSEE_KEY);
         mVolumeControl = (ImageView) findViewById(R.id.iv_vol_circle);
         mEndCall = (ImageView) findViewById(R.id.iv_call_action);
         mMute = (ImageView) findViewById(R.id.iv_vol);

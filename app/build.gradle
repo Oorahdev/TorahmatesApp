@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
+        google()
     }
 
     dependencies {
@@ -8,12 +9,18 @@ buildscript {
     }
 }
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 
-
+configurations {
+    all {
+     //   exclude module: 'httpclient'
+        exclude module: 'commons-logging'
+    }
+}
 android {
-    compileSdkVersion 21
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 26
+    buildToolsVersion "28.0.3"
+
+   // buildToolsVersion '26.0.0'
     def jenkinsBuild = System.getenv("BUILD_NUMBER") ?: "23"
 
 
@@ -21,7 +28,7 @@ android {
         applicationId "com.vb.torahmate"
         manifestPlaceholders = [localApplicationId: "com.vb.torahmate"]
         minSdkVersion 14
-        targetSdkVersion 21
+        targetSdkVersion 26
         versionCode jenkinsBuild.toInteger()
         versionName "1.2"
         //multiDexEnabled true
@@ -43,26 +50,31 @@ repositories {
         url "https://repo.commonsware.com.s3.amazonaws.com"
     }
     maven { url 'https://maven.fabric.io/public' }
+    google()
+    jcenter()
+
+    google()
+    mavenLocal()
+    maven{
+        url "https://maven.google.com"
+    }
+
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/activeandroid-3.0.jar')
     //compile files ('libs/activeandroid-3.1-beta.jar')
-
     //compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
-        transitive = true;
-    }
-    compile 'com.google.firebase:firebase-core:10.0.1'
-    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-core:10.2.1'
+    compile 'com.google.firebase:firebase-messaging:10.2.1'
     compile 'com.firebase:firebase-jobdispatcher:0.6.0'
     //compile 'com.android.support:appcompat-v7:22.2.0'
     //compile 'com.android.support:recyclerview-v7:22.0.+'
-    compile 'com.android.support:appcompat-v7:21.0.0'
-
-    compile 'com.android.support:recyclerview-v7:21.0.0'
-    compile 'com.android.support:support-v4:21.0.3'
+    // https://mvnrepository.com/artifact/com.android.support/appcompat-v7
+    compile 'com.android.support:appcompat-v7:26.0.0'
+    compile 'com.android.support:support-v4:26.0.0'
+    compile 'com.android.support:recyclerview-v7:26.0.0'
     compile 'com.path:android-priority-jobqueue:1.1.2'
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'com.google.code.gson:gson:2.2.4'
@@ -78,10 +90,11 @@ dependencies {
     compile 'com.sefford:circular-progress-drawable:1.31@aar'
     compile 'com.facebook.rebound:rebound:0.3.8'
     compile 'com.github.AutSoft:CircularTools:1.1.0'
-    compile 'com.appsee:appsee-android:+'
-    compile 'com.google.android.gms:play-services-analytics:10.0.1'
+   // compile 'com.appsee:appsee-android:+'
+    compile 'com.google.android.gms:play-services-analytics:10.2.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:support-compat:21.0.0'
+    // https://mvnrepository.com/artifact/com.android.support/support-compat
+    compile 'com.android.support:support-compat:26.0.0'
     //compile 'com.android.support:multidex:1.0.0'
 }
 

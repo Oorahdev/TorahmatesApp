@@ -138,7 +138,9 @@ public class NavigationDrawerFragment extends Fragment {
 
         private GestureDetector gestureDetector;
         private ClickListener clickListener;
-
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept)  {
+        }
         public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final ClickListener clickListener) {
             this.clickListener = clickListener;
             gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {

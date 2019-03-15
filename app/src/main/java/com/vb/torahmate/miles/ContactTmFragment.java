@@ -294,7 +294,9 @@ public class ContactTmFragment extends Fragment {
     class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
         private final GestureDetector gestureDetector;
         private final ClickListener clickListener;
-
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept)  {
+        }
         public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final ClickListener clickListener) {
             this.clickListener = clickListener;
             gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {

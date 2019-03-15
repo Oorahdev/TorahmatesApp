@@ -1,7 +1,7 @@
 package com.vb.torahmate.main;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

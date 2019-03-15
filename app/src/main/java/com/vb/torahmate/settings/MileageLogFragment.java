@@ -136,7 +136,9 @@ public class MileageLogFragment extends Fragment implements View.OnClickListener
     }
 
     static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
-
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept)  {
+        }
         private final GestureDetector gestureDetector;
         private final ClickListener clickListener;
 

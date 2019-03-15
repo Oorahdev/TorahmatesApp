@@ -25,7 +25,6 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.appsee.Appsee;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.daimajia.androidanimations.library.Techniques;
@@ -81,7 +80,7 @@ public class Login extends FragmentActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
         Util.googleTracking(Constants.ACTIVITY_CAT, this.getClass().getSimpleName());
-        Appsee.start(Constants.APPSEE_KEY);
+   //     Appsee.start(Constants.APPSEE_KEY);
         mJobManager = AppManager.getInstance().getJobManager();
         mAwesomeValidation = new AwesomeValidation(ValidationStyle.UNDERLABEL);
         mAwesomeValidation.setContext(AppManager.getAppContext().getApplicationContext());
